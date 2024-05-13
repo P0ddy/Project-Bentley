@@ -1,10 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://df2u7u7wedi5c"]
+[gd_scene load_steps=8 format=3 uid="uid://df2u7u7wedi5c"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/Enemy.gd" id="1_k3467"]
 [ext_resource type="Texture2D" uid="uid://dp0s77m5y3fm6" path="res://Assets/FlyingCar.png" id="2_jsm3h"]
+[ext_resource type="Texture2D" uid="uid://0y15fyppumw6" path="res://Assets/muzzle3.png" id="3_7l023"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sarjd"]
-size = Vector2(436, 219)
+size = Vector2(211, 88)
+
+[sub_resource type="Animation" id="Animation_b635o"]
+resource_name = "MuzzleFlash"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteMuzzle:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpriteMuzzle:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.785398, 0.349066]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sf0tj"]
+_data = {
+"MuzzleFlash": SubResource("Animation_b635o")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gxtkg"]
 radius = 1009.0
@@ -14,24 +48,40 @@ motion_mode = 1
 script = ExtResource("1_k3467")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 12)
 shape = SubResource("RectangleShape2D_sarjd")
 
 [node name="EnemySprite" type="Sprite2D" parent="."]
 modulate = Color(0.87451, 0, 0.0784314, 1)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_jsm3h")
 flip_h = true
+
+[node name="Spawnpos" type="Marker2D" parent="."]
+position = Vector2(-215, -15)
+
+[node name="MuzzleFlash" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_sf0tj")
+}
+
+[node name="SpriteMuzzle" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-182, -15)
+rotation = 0.349066
+scale = Vector2(0.304907, 0.304907)
+texture = ExtResource("3_7l023")
+region_enabled = true
+region_rect = Rect2(18, 4, 154, 153)
+
+[node name="ShootSpeed" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
 
 [node name="Detection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
 shape = SubResource("CircleShape2D_gxtkg")
 
-[node name="Spawnpos" type="Marker2D" parent="."]
-position = Vector2(-215, -15)
-
-[node name="ShootSpeed" type="Timer" parent="."]
-wait_time = 0.3
-autostart = true
-
-[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_shoot_speed_timeout"]
+[connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
