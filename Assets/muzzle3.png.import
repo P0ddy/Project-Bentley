@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crkne7ru8031e"
-path="res://.godot/imported/Muzzle.png-cc700392414f7bc29fb38a5a6d7de91d.ctex"
+uid="uid://0y15fyppumw6"
+path="res://.godot/imported/muzzle3.png-83bcb300bdc313dbbf336414842b9274.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Muzzle.png"
-dest_files=["res://.godot/imported/Muzzle.png-cc700392414f7bc29fb38a5a6d7de91d.ctex"]
+source_file="res://Assets/muzzle3.png"
+dest_files=["res://.godot/imported/muzzle3.png-83bcb300bdc313dbbf336414842b9274.ctex"]
 
 [params]
 
