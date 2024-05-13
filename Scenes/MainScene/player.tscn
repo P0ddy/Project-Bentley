@@ -59,8 +59,9 @@ position = Vector2(216, -15)
 wait_time = 0.3
 
 [node name="MuzzleFlash" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(234, -14)
-rotation = 0.785398
+rotation = 0.349066
 scale = Vector2(0.423502, 0.411956)
 texture = ExtResource("3_fca2x")
 region_enabled = true

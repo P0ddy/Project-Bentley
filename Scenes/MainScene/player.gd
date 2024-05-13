@@ -10,6 +10,8 @@ const ACCELERATION = 1000
 const FRICTION = 600
 const MAX_SPEED = 400
 
+var health = 3
+
 func _physics_process(delta):
 	move(delta)
 
@@ -50,3 +52,9 @@ func shoot ():
 	muzzleflash.play("MuzzleFlash")
 	$AttackSpeedTimer.start()
 	canshoot = false
+
+func player_hit():
+	health -= 1
+	Global.health -= 1
+	if health == 0:
+		queue_free()
