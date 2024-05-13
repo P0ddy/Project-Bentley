@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxhjh00lqxlnv"]
+
+[ext_resource type="Texture2D" uid="uid://dp0s77m5y3fm6" path="res://FlyingCar.png" id="1_5wk1c"]
+
+[node name="Game" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_5wk1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
