@@ -75,7 +75,7 @@ region_enabled = true
 region_rect = Rect2(18, 4, 154, 153)
 
 [node name="ShootSpeed" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.7
 autostart = true
 
 [node name="Detection" type="Area2D" parent="."]

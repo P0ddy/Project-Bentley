@@ -1,4 +1,4 @@
 extends Label
 
 func _process(_delta):
-	text = String(Global.health)
+	text = str(Global.health)
