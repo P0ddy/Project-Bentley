@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/MainScene/player.gd" id="1_u2hrs"]
 [ext_resource type="Texture2D" uid="uid://dp0s77m5y3fm6" path="res://Assets/FlyingCar.png" id="2_in2pi"]
-[ext_resource type="Texture2D" uid="uid://crkne7ru8031e" path="res://Assets/Muzzle.png" id="3_n4ldi"]
+[ext_resource type="Texture2D" uid="uid://0y15fyppumw6" path="res://Assets/muzzle3.png" id="3_fca2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5niuo"]
 size = Vector2(409, 210)
@@ -32,7 +32,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.349066]
+"values": [0.785398, 0.349066]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xilsa"]
@@ -40,8 +40,9 @@ _data = {
 "MuzzleFlash": SubResource("Animation_twe1a")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(338, 182)
+motion_mode = 1
 script = ExtResource("1_u2hrs")
 
 [node name="SpaceCar" type="Sprite2D" parent="."]
@@ -58,12 +59,12 @@ position = Vector2(216, -15)
 wait_time = 0.3
 
 [node name="MuzzleFlash" type="Sprite2D" parent="."]
-position = Vector2(248, -10)
-rotation = -0.261799
-scale = Vector2(10.75, 10.75)
-texture = ExtResource("3_n4ldi")
+position = Vector2(234, -14)
+rotation = 0.785398
+scale = Vector2(0.423502, 0.411956)
+texture = ExtResource("3_fca2x")
 region_enabled = true
-region_rect = Rect2(0, 2, 6, 6.72855)
+region_rect = Rect2(199, 11, 151, 149)
 
 [node name="MuzzleFlashAnimation" type="AnimationPlayer" parent="."]
 libraries = {

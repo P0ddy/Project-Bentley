@@ -38,7 +38,7 @@ func apply_friction(amount) -> void:
 func _on_attack_speed_timer_timeout():
 	canshoot = true
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("shoot") and canshoot:
 		shoot()
 
