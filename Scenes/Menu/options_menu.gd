@@ -16,8 +16,13 @@ func _ready():
 	$Music.play()
 	
 	
-	func _change_volumen(volumen, bus):
-		if volumen == 
-	
-	
+
+
+func _change_volumen(volumen, bus):
+	if volumen == MusicSlider.min_value:
+		AudioServer.set_bus_mute(AudioServer.get_bus_index(bus), true)
+	else:
+		AudioServer.set_bus_mute(AudioServer.get_bus_index(bus), true)
+		
+			
 	
