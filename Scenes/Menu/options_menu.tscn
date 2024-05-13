@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8gvpvs1dpvr2"]
+[gd_scene load_steps=4 format=3 uid="uid://c8gvpvs1dpvr2"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/options_menu.gd" id="1_paq8y"]
 [ext_resource type="AudioStream" uid="uid://bpjvf80yjepfs" path="res://Audio/Music/TestTrack.mp3" id="2_3j3du"]
+[ext_resource type="PackedScene" uid="uid://bqemmj5sudlam" path="res://Scenes/Menu/volume_slider.tscn" id="2_3jgbx"]
 
 [node name="Options_Menu" type="Control"]
 layout_mode = 3
@@ -36,92 +37,99 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.307106, 0.503942, 0.531524, 1)
 
+[node name="OptionsText" type="Label" parent="Mid Color"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.2
+offset_top = -499.9
+offset_right = 214.8
+offset_bottom = -347.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 111
+text = "Settings
+"
+
 [node name="MarginContainer" type="MarginContainer" parent="Mid Color"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 63.0
+offset_top = 244.0
+offset_right = -599.4
+offset_bottom = -235.8
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 425
-theme_override_constants/margin_top = 75
-theme_override_constants/margin_right = 160
-theme_override_constants/margin_bottom = 70
+pivot_offset = Vector2(-1109, -407)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Mid Color/MarginContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="Mid Color/MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 130
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Mid Color/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="Volume" type="Label" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="FullScreen" type="Label" parent="Mid Color/MarginContainer/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
-theme_override_font_sizes/font_size = 116
-text = "Volume"
-
-[node name="HSlider" type="HSlider" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Mid Color/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="Music" type="Label" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_font_sizes/font_size = 116
-text = "Music"
-
-[node name="HSlider" type="HSlider" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Mid Color/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="SFX" type="Label" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_font_sizes/font_size = 116
-text = "SFX"
-
-[node name="HSlider" type="HSlider" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="Mid Color/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="FullScreen" type="Label" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer4"]
-layout_mode = 2
-size_flags_horizontal = 6
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_font_sizes/font_size = 116
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 111
 text = "Fullscreen
 "
 
-[node name="CheckButton" type="CheckButton" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer4"]
+[node name="CheckButton" type="CheckButton" parent="Mid Color/MarginContainer/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 6
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_3j3du")
-bus = &"Music"
+[node name="Sliders" type="VBoxContainer" parent="Mid Color"]
+layout_mode = 0
+offset_left = 882.0
+offset_top = 59.0
+offset_right = 1355.0
+offset_bottom = 586.0
+
+[node name="MasterVoume" type="Label" parent="Mid Color/Sliders"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 112
+text = "Volume
+"
+
+[node name="VolumeSlider" parent="Mid Color/Sliders" instance=ExtResource("2_3jgbx")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="MusicVolume" type="Label" parent="Mid Color/Sliders"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 112
+text = "Music
+"
+
+[node name="VolumeSlider2" parent="Mid Color/Sliders" instance=ExtResource("2_3jgbx")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="SFXVoume" type="Label" parent="Mid Color/Sliders"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 112
+text = "SFX"
+
+[node name="VolumeSlider3" parent="Mid Color/Sliders" instance=ExtResource("2_3jgbx")]
+layout_mode = 2
+bus_name = "SFX"
 
 [node name="BackToMenuButton" type="Button" parent="."]
 layout_mode = 1
@@ -139,5 +147,14 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 81
 text = "Back"
 
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3j3du")
+autoplay = true
+bus = &"Music"
+
+[connection signal="toggled" from="Mid Color/MarginContainer/HBoxContainer4/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="button_down" from="BackToMenuButton" to="." method="_on_back_to_menu_button_button_down"]
 [connection signal="pressed" from="BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]
