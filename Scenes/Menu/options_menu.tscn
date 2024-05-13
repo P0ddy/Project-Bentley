@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8gvpvs1dpvr2"]
+[gd_scene load_steps=3 format=3 uid="uid://c8gvpvs1dpvr2"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/options_menu.gd" id="1_paq8y"]
-[ext_resource type="AudioStream" uid="uid://bpjvf80yjepfs" path="res://Audio/Music/TestTrack.mp3" id="2_3j3du"]
 [ext_resource type="PackedScene" uid="uid://bqemmj5sudlam" path="res://Scenes/Menu/volume_slider.tscn" id="2_3jgbx"]
 
 [node name="Options_Menu" type="Control"]
@@ -146,14 +145,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 81
 text = "Back"
-
-[node name="SFX" type="AudioStreamPlayer" parent="."]
-bus = &"SFX"
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_3j3du")
-autoplay = true
-bus = &"Music"
 
 [connection signal="toggled" from="Mid Color/MarginContainer/HBoxContainer4/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="button_down" from="BackToMenuButton" to="." method="_on_back_to_menu_button_button_down"]

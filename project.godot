@@ -18,6 +18,7 @@ config/icon="res://Assets/icon.svg"
 [autoload]
 
 Global="*res://Global.gd"
+AudioPlayer="*res://Scenes/AudioScene/audio_player.tscn"
 
 [display]
 
