@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp0s77m5y3fm6"
-path="res://.godot/imported/FlyingCar.png-13c75b981723c6d1892b3325d6f81451.ctex"
+uid="uid://bqosdr2ahmb0d"
+path="res://.godot/imported/Bullet.png-01cfc6486bd6711d123faf51c40f38d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FlyingCar.png"
-dest_files=["res://.godot/imported/FlyingCar.png-13c75b981723c6d1892b3325d6f81451.ctex"]
+source_file="res://Assets/Bullet.png"
+dest_files=["res://.godot/imported/Bullet.png-01cfc6486bd6711d123faf51c40f38d2.ctex"]
 
 [params]
 
@@ -24,11 +24,11 @@ compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
-roughness/src_normal=""
+roughness/src_normal="res://Assets/Bullet.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

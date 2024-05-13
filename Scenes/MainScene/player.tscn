@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bffmd8v2aatj"]
+
+[ext_resource type="Script" path="res://Scenes/MainScene/player.gd" id="1_u2hrs"]
+[ext_resource type="Texture2D" uid="uid://dp0s77m5y3fm6" path="res://Assets/FlyingCar.png" id="2_in2pi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5niuo"]
+size = Vector2(409, 210)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(338, 182)
+script = ExtResource("1_u2hrs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_in2pi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4.5, 11)
+shape = SubResource("RectangleShape2D_5niuo")
+
+[node name="SpawnPosition" type="Marker2D" parent="."]
+position = Vector2(216, -15)
+
+[node name="AttackSpeedTimer" type="Timer" parent="."]
+wait_time = 0.3
+
+[connection signal="timeout" from="AttackSpeedTimer" to="." method="_on_attack_speed_timer_timeout"]
