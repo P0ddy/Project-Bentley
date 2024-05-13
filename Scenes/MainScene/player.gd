@@ -1,5 +1,10 @@
 extends CharacterBody2D
 
+var Bullet = preload("res://Scenes/MainScene/bullet.tscn")
+var canshoot = true
+
+@onready var spawnpos = $SpawnPosition
+
 const ACCELERATION = 1000
 const FRICTION = 600
 const MAX_SPEED = 400
@@ -27,3 +32,19 @@ func apply_friction(amount) -> void:
 		velocity -= velocity.normalized() * amount
 	else:
 		velocity = Vector2.ZERO
+
+
+func _on_attack_speed_timer_timeout():
+	canshoot = true
+
+func _process(delta):
+	if Input.is_action_pressed("shoot") and canshoot:
+		shoot()
+
+func shoot ():
+	var bullet = Bullet.instantiate()
+	bullet.position = spawnpos.global_position
+	get_tree().current_scene.add_child(bullet)
+	
+	$AttackSpeedTimer.start()
+	canshoot = false
