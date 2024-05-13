@@ -14,6 +14,7 @@ script = ExtResource("1_owfyi")
 main_game_packed_scene = ExtResource("2_ww1lw")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,6 +63,105 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 61
 text = "Exit Game"
+
+[node name="OptionsPanel" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Options Title" type="Label" parent="OptionsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 201
+text = "Options
+"
+horizontal_alignment = 1
+
+[node name="VideoButton" type="Button" parent="OptionsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(518.255, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 81
+text = "Video
+"
+
+[node name="AudioButton" type="Button" parent="OptionsPanel/VBoxContainer"]
+custom_minimum_size = Vector2(518.255, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 81
+text = "Audio"
+
+[node name="Back Button" type="Button" parent="OptionsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = 338.0
+offset_right = 196.0
+offset_bottom = 443.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 71
+text = "Back
+"
+
+[node name="VideoPanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back Button" type="Button" parent="VideoPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = 338.0
+offset_right = 196.0
+offset_bottom = 443.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 71
+text = "Back
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VideoPanel"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 42.0
+offset_bottom = 40.0
+
+[node name="Labels" type="VBoxContainer" parent="VideoPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VideoPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="button_down" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_button_down"]
