@@ -1,0 +1,143 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8gvpvs1dpvr2"]
+
+[ext_resource type="Script" path="res://Scenes/Menu/options_menu.gd" id="1_paq8y"]
+[ext_resource type="AudioStream" uid="uid://bpjvf80yjepfs" path="res://Audio/Music/TestTrack.mp3" id="2_3j3du"]
+
+[node name="Options_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_paq8y")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.553581, 0.261212, 0.428144, 1)
+
+[node name="Mid Color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12
+anchor_top = 0.235
+anchor_right = 0.84
+anchor_bottom = 0.82
+offset_left = 27.6
+offset_top = -35.8
+offset_right = 27.6
+offset_bottom = -35.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.307106, 0.503942, 0.531524, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Mid Color"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 425
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 70
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Mid Color/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Mid Color/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Volume" type="Label" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 116
+text = "Volume"
+
+[node name="HSlider" type="HSlider" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Mid Color/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Music" type="Label" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 116
+text = "Music"
+
+[node name="HSlider" type="HSlider" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Mid Color/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="SFX" type="Label" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 116
+text = "SFX"
+
+[node name="HSlider" type="HSlider" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Mid Color/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="FullScreen" type="Label" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 116
+text = "Fullscreen
+"
+
+[node name="CheckButton" type="CheckButton" parent="Mid Color/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="BackToMenuButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = 360.0
+offset_right = 155.0
+offset_bottom = 479.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 81
+text = "Back"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3j3du")
+bus = &"Music"
+
+[connection signal="button_down" from="BackToMenuButton" to="." method="_on_back_to_menu_button_button_down"]
+[connection signal="pressed" from="BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]
