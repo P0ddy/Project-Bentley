@@ -4,6 +4,7 @@ var Bullet = preload("res://Scenes/MainScene/bullet.tscn")
 var canshoot = true
 
 @onready var spawnpos = $SpawnPosition
+@onready var muzzleflash = $MuzzleFlashAnimation
 
 const ACCELERATION = 1000
 const FRICTION = 600
@@ -46,5 +47,6 @@ func shoot ():
 	bullet.position = spawnpos.global_position
 	get_tree().current_scene.add_child(bullet)
 	
+	muzzleflash.play("MuzzleFlash")
 	$AttackSpeedTimer.start()
 	canshoot = false
