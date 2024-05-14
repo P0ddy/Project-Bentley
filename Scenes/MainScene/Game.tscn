@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxhjh00lqxlnv"]
+[gd_scene load_steps=12 format=3 uid="uid://bxhjh00lqxlnv"]
 
 [ext_resource type="PackedScene" uid="uid://bffmd8v2aatj" path="res://Scenes/MainScene/player.tscn" id="1_0v76o"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Game.gd" id="1_5rsoo"]
 [ext_resource type="PackedScene" uid="uid://df2u7u7wedi5c" path="res://Scenes/MainScene/enemy.tscn" id="2_fg1y3"]
+[ext_resource type="PackedScene" uid="uid://wgfhrt0csw1w" path="res://Scenes/Menu/pause_menu.tscn" id="2_rrvfi"]
 [ext_resource type="Script" path="res://Scenes/MainScene/SpawnTimer.gd" id="4_lndq8"]
 [ext_resource type="Script" path="res://Scenes/MainScene/DisplayHP.gd" id="5_i1t1g"]
 [ext_resource type="Script" path="res://Scenes/MainScene/DisplayScore.gd" id="6_4n6hb"]
@@ -17,6 +18,7 @@
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5rsoo")
+pause_menu_packed_scene = ExtResource("2_rrvfi")
 
 [node name="Player" parent="." instance=ExtResource("1_0v76o")]
 scale = Vector2(0.5, 0.5)
@@ -28,15 +30,17 @@ position = Vector2(2352, 485)
 autostart = true
 script = ExtResource("4_lndq8")
 
-[node name="UI" type="Node2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="UI"]
+[node name="UI" type="Node2D" parent="CanvasLayer"]
+
+[node name="Control" type="Control" parent="CanvasLayer/UI"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="HP" type="Label" parent="UI/Control"]
+[node name="HP" type="Label" parent="CanvasLayer/UI/Control"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = -35.0
@@ -47,7 +51,7 @@ theme_override_font_sizes/font_size = 80
 text = "HP:"
 vertical_alignment = 1
 
-[node name="DisplayHP" type="Label" parent="UI/Control"]
+[node name="DisplayHP" type="Label" parent="CanvasLayer/UI/Control"]
 layout_mode = 0
 offset_left = 179.0
 offset_top = -2.0
@@ -58,7 +62,7 @@ theme_override_font_sizes/font_size = 80
 text = "3"
 script = ExtResource("5_i1t1g")
 
-[node name="Score" type="Label" parent="UI/Control"]
+[node name="Score" type="Label" parent="CanvasLayer/UI/Control"]
 layout_mode = 0
 offset_left = 1514.0
 offset_top = -12.0
@@ -68,7 +72,7 @@ theme_override_fonts/font = SubResource("FontVariation_jr3ij")
 theme_override_font_sizes/font_size = 80
 text = "Score:"
 
-[node name="DisplayScore" type="Label" parent="UI/Control"]
+[node name="DisplayScore" type="Label" parent="CanvasLayer/UI/Control"]
 layout_mode = 0
 offset_left = 1803.0
 offset_top = -6.0
