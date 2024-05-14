@@ -74,3 +74,5 @@ func player_hit():
 		queue_free()
 		
 
+
+

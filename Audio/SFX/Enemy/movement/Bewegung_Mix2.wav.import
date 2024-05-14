@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c4l6ib0lrgqdl"
-path="res://.godot/imported/Bewegung_Mix2.wav-2714a01a5cc7a250dd8088ab62235e09.sample"
+path="res://.godot/imported/Bewegung_Mix2.wav-03882f85e07afae472bd25587577bd5e.sample"
 
 [deps]
 
-source_file="res://Audio/SFX/Player/movement/Bewegung_Mix2.wav"
-dest_files=["res://.godot/imported/Bewegung_Mix2.wav-2714a01a5cc7a250dd8088ab62235e09.sample"]
+source_file="res://Audio/SFX/Enemy/movement/Bewegung_Mix2.wav"
+dest_files=["res://.godot/imported/Bewegung_Mix2.wav-03882f85e07afae472bd25587577bd5e.sample"]
 
 [params]
 

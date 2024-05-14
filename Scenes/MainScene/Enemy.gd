@@ -12,6 +12,8 @@ var health = 4
 @onready var spawnpos = $Spawnpos
 @onready var muzzleflash = $MuzzleFlash
 @onready var enemy_sprite = $AnimatedSprite2D
+@onready var hit_sound = $HitSounds
+@onready var death_sound = $DeathSound
 
 func _on_detection_body_entered(body):
 	if body.is_in_group("Player"):
@@ -44,12 +46,15 @@ func enemy_hit():
 	$AnimatedSprite2D.modulate = Color.DARK_RED
 	await get_tree().create_timer(0.1).timeout
 	$AnimatedSprite2D.modulate = Color.WHITE
+	hit_sound.play()
 	
 	if health == 0:
 		Global.camera.screen_shake(7, 7, 0.05)
 		Global.score += 5
 		queue_free()
-	
+		
+	if health == 0:
+		$DeathSound.play()
 		
 		
 		
@@ -57,3 +62,12 @@ func enemy_hit():
 		var explosion = Explosion.instantiate()
 		explosion.global_position = global_position
 		get_tree().current_scene.add_child(explosion)
+		
+		
+		
+		
+
+
+
+
+
