@@ -1,9 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://6iwvbo1m5m6b"]
+[gd_scene load_steps=6 format=3 uid="uid://6iwvbo1m5m6b"]
 
 [ext_resource type="AudioStream" uid="uid://cq3p4t3geslqo" path="res://Audio/Music/TestTrack.mp3" id="1_f5vyh"]
+[ext_resource type="Script" path="res://Scenes/AudioScene/audio_player.gd" id="1_xlrje"]
+[ext_resource type="AudioStream" uid="uid://dg76nxsecl12p" path="res://Audio/SFX/UI/Blip_Select_Mix.wav" id="2_lq12b"]
+[ext_resource type="AudioStream" uid="uid://bu2k1ttmler27" path="res://Audio/SFX/UI/Blip_Select_Mix2.wav" id="3_mjbdb"]
 
-[node name="AudioPlayer" type="AudioStreamPlayer"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ej65s"]
+streams_count = 2
+stream_0/stream = ExtResource("2_lq12b")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("3_mjbdb")
+stream_1/weight = 1.0
+
+[node name="AudioPlayer" type="Node2D"]
 process_mode = 3
+script = ExtResource("1_xlrje")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_ej65s")
+
+[node name="MainTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_f5vyh")
 autoplay = true
-bus = &"Music"
