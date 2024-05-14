@@ -61,7 +61,6 @@ func shoot ():
 func player_hit():
 	health -= 1
 	Global.health -= 1
-	
 	GetDamageSound.play()
 	$AnimatedSprite.modulate = Color.DARK_RED
 	await get_tree().create_timer(0.1).timeout
@@ -69,7 +68,7 @@ func player_hit():
 	
 	
 	
-	if health == 0:
+	if Global.health == 0:
 		get_tree().change_scene_to_file("res://Scenes/Menu/game_over.tscn")
 		queue_free()
 		
