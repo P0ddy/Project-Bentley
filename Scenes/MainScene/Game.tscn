@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxhjh00lqxlnv"]
+[gd_scene load_steps=15 format=3 uid="uid://bxhjh00lqxlnv"]
 
 [ext_resource type="PackedScene" uid="uid://bffmd8v2aatj" path="res://Scenes/MainScene/player.tscn" id="1_0v76o"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Game.gd" id="1_5rsoo"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cpjn0s8enagpg" path="res://Assets/HP.png" id="6_i8dvb"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Background.gd" id="8_p2q4e"]
 [ext_resource type="Texture2D" uid="uid://dogyvl4glwhi8" path="res://Assets/BG test.jpg" id="9_w7vak"]
+[ext_resource type="Script" path="res://Scenes/MainScene/Camera.gd" id="11_xfkbu"]
 
 [sub_resource type="FontVariation" id="FontVariation_smcdk"]
 
@@ -90,4 +91,12 @@ texture = ExtResource("9_w7vak")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
 
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+script = ExtResource("11_xfkbu")
+
+[node name="Shaketime" type="Timer" parent="Camera"]
+autostart = true
+
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Camera/Shaketime" to="Camera" method="_on_shaketime_timeout"]
