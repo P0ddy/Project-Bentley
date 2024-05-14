@@ -19,7 +19,7 @@ func _physics_process(_delta):
 	var movement = Vector2(-speed, 0)
 	
 	if player:
-s		movement = position.direction_to(player.position) * speed
+		movement = position.direction_to(player.position) * speed
 	movement = move_and_collide(movement)
 	
 func _on_shoot_speed_timeout():

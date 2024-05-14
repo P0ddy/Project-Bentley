@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://0y15fyppumw6" path="res://Assets/muzzle3.png" id="3_7l023"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sarjd"]
-size = Vector2(95, 76)
+size = Vector2(75, 60)
 
 [sub_resource type="Animation" id="Animation_b635o"]
 resource_name = "MuzzleFlash"
@@ -41,24 +41,24 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gxtkg"]
-radius = 752.017
+radius = 1009.0
 
 [node name="Enemy" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_k3467")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-24.5, 0)
+position = Vector2(-19.5, 0)
 shape = SubResource("RectangleShape2D_sarjd")
 
 [node name="EnemySprite" type="Sprite2D" parent="."]
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 texture = ExtResource("2_3khfd")
 region_enabled = true
 region_rect = Rect2(0, 0, 29, 15)
 
 [node name="Spawnpos" type="Marker2D" parent="."]
-position = Vector2(-63, 30)
+position = Vector2(-50, 22)
 
 [node name="MuzzleFlash" type="AnimationPlayer" parent="."]
 libraries = {
@@ -66,21 +66,21 @@ libraries = {
 }
 
 [node name="SpriteMuzzle" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-60.5778, 29.0242)
-rotation = 0.349066
-scale = Vector2(0.25, 0.25)
+position = Vector2(-50, 22)
+rotation = 0.785398
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_7l023")
 region_enabled = true
 region_rect = Rect2(18, 4, 154, 153)
 
 [node name="ShootSpeed" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.7
 autostart = true
 
 [node name="Detection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
+visible = false
 shape = SubResource("CircleShape2D_gxtkg")
 
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_shoot_speed_timeout"]

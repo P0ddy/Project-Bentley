@@ -57,4 +57,5 @@ func player_hit():
 	health -= 1
 	Global.health -= 1
 	if health == 0:
+		get_tree().change_scene_to_file("res://Scenes/Menu/game_over.tscn")
 		queue_free()
