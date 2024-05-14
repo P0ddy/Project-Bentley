@@ -1,0 +1,136 @@
+[gd_scene load_steps=2 format=3 uid="uid://c07128m73ate2"]
+
+[ext_resource type="PackedScene" uid="uid://bqemmj5sudlam" path="res://Scenes/Menu/volume_slider.tscn" id="1_jknxo"]
+
+[node name="PauseMenuOptions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mid Color" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12
+anchor_top = 0.235
+anchor_right = 0.84
+anchor_bottom = 0.82
+offset_left = 27.6
+offset_top = -35.8
+offset_right = 27.6
+offset_bottom = -35.8
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.307106, 0.503942, 0.531524, 1)
+
+[node name="OptionsText" type="Label" parent="Mid Color"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.2
+offset_top = -499.9
+offset_right = 214.8
+offset_bottom = -347.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 111
+text = "Settings
+"
+
+[node name="MarginContainer" type="MarginContainer" parent="Mid Color"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 63.0
+offset_top = 244.0
+offset_right = -599.4
+offset_bottom = -235.8
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-1109, -407)
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Mid Color/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 130
+
+[node name="FullScreen" type="Label" parent="Mid Color/MarginContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 111
+text = "Fullscreen
+"
+
+[node name="CheckButton" type="CheckButton" parent="Mid Color/MarginContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Sliders" type="VBoxContainer" parent="Mid Color"]
+layout_mode = 0
+offset_left = 882.0
+offset_top = 59.0
+offset_right = 1355.0
+offset_bottom = 586.0
+
+[node name="MasterVoume" type="Label" parent="Mid Color/Sliders"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 112
+text = "Volume
+"
+
+[node name="VolumeSlider" parent="Mid Color/Sliders" instance=ExtResource("1_jknxo")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="MusicVolume" type="Label" parent="Mid Color/Sliders"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 112
+text = "Music
+"
+
+[node name="VolumeSlider2" parent="Mid Color/Sliders" instance=ExtResource("1_jknxo")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="SFXVoume" type="Label" parent="Mid Color/Sliders"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_font_sizes/font_size = 112
+text = "SFX"
+
+[node name="VolumeSlider3" parent="Mid Color/Sliders" instance=ExtResource("1_jknxo")]
+layout_mode = 2
+bus_name = "SFX"
+
+[node name="BackToMenuButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = 360.0
+offset_right = 155.0
+offset_bottom = 479.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 81
+text = "Back"
