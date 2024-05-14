@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxhjh00lqxlnv"]
+[gd_scene load_steps=21 format=3 uid="uid://bxhjh00lqxlnv"]
 
 [ext_resource type="PackedScene" uid="uid://bffmd8v2aatj" path="res://Scenes/MainScene/player.tscn" id="1_0v76o"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Game.gd" id="1_5rsoo"]
@@ -6,7 +6,65 @@
 [ext_resource type="PackedScene" uid="uid://wgfhrt0csw1w" path="res://Scenes/Menu/pause_menu.tscn" id="2_rrvfi"]
 [ext_resource type="Script" path="res://Scenes/MainScene/SpawnTimer.gd" id="4_lndq8"]
 [ext_resource type="Script" path="res://Scenes/MainScene/DisplayHP.gd" id="5_i1t1g"]
+[ext_resource type="Texture2D" uid="uid://dl1m1byu24q5n" path="res://Assets/Ufo-Idle-Sheet.png" id="5_tw1l5"]
 [ext_resource type="Script" path="res://Scenes/MainScene/DisplayScore.gd" id="6_4n6hb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yri6"]
+atlas = ExtResource("5_tw1l5")
+region = Rect2(0, 0, 35, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l7yv"]
+atlas = ExtResource("5_tw1l5")
+region = Rect2(35, 0, 35, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0soh"]
+atlas = ExtResource("5_tw1l5")
+region = Rect2(70, 0, 35, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur43s"]
+atlas = ExtResource("5_tw1l5")
+region = Rect2(105, 0, 35, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2osr"]
+atlas = ExtResource("5_tw1l5")
+region = Rect2(140, 0, 35, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhnfy"]
+atlas = ExtResource("5_tw1l5")
+region = Rect2(175, 0, 35, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1r0om"]
+atlas = ExtResource("5_tw1l5")
+region = Rect2(210, 0, 35, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rp12q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yri6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l7yv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0soh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur43s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2osr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhnfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1r0om")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="FontVariation" id="FontVariation_0glf1"]
 
@@ -25,6 +83,10 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Enemy" parent="." instance=ExtResource("2_fg1y3")]
 position = Vector2(2352, 485)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy"]
+sprite_frames = SubResource("SpriteFrames_rp12q")
+frame_progress = 0.117083
 
 [node name="SpawnTimer" type="Timer" parent="."]
 autostart = true
