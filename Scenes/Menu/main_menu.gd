@@ -7,6 +7,8 @@ extends Control
 
 func _on_start_button_button_down():
 	get_tree().change_scene_to_packed(main_game_packed_scene)
+	Global.score = 0
+	Global.health = 3
 
 
 func _on_options_button_button_down():

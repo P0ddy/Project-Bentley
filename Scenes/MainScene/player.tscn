@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bffmd8v2aatj"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/player.gd" id="1_u2hrs"]
-[ext_resource type="Texture2D" uid="uid://dp0s77m5y3fm6" path="res://Assets/FlyingCar.png" id="2_in2pi"]
+[ext_resource type="Texture2D" uid="uid://bqroux18ckpri" path="res://Assets/Car1-driving-idle-Shee-WITHOUT-FLAMEt.png" id="2_osux5"]
 [ext_resource type="Texture2D" uid="uid://0y15fyppumw6" path="res://Assets/muzzle3.png" id="3_fca2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5niuo"]
-size = Vector2(409, 210)
+size = Vector2(388, 119)
 
 [sub_resource type="Animation" id="Animation_twe1a"]
 resource_name = "MuzzleFlash"
@@ -46,23 +46,27 @@ motion_mode = 1
 script = ExtResource("1_u2hrs")
 
 [node name="SpaceCar" type="Sprite2D" parent="."]
-texture = ExtResource("2_in2pi")
+position = Vector2(-4.46429, 37.25)
+scale = Vector2(10.75, 10.75)
+texture = ExtResource("2_osux5")
+region_enabled = true
+region_rect = Rect2(36, 0, 38, 14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4.5, 11)
+position = Vector2(-5, 43.5)
 shape = SubResource("RectangleShape2D_5niuo")
 
 [node name="SpawnPosition" type="Marker2D" parent="."]
-position = Vector2(216, -15)
+position = Vector2(184, 11)
 
 [node name="AttackSpeedTimer" type="Timer" parent="."]
 wait_time = 0.3
 
 [node name="MuzzleFlash" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(234, -14)
-rotation = 0.349066
-scale = Vector2(0.423502, 0.411956)
+position = Vector2(187, 10)
+rotation = 0.785398
+scale = Vector2(0.467437, 0.454693)
 texture = ExtResource("3_fca2x")
 region_enabled = true
 region_rect = Rect2(199, 11, 151, 149)
