@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+
+var Explosion = preload("res://Scenes/MainScene/explosion.tscn")
+
 @export var minspeed = 50
 @export var maxspeed = 250
 @export var minRotationRate = -25
@@ -30,6 +33,11 @@ func enemy_hit():
 		Global.camera.screen_shake(4, 4, 0.05)
 		Global.score += 3
 		queue_free()
+		
+	if health == 0:
+		var explosion = Explosion.instantiate()
+		explosion.global_position = global_position
+		get_tree().current_scene.add_child(explosion)
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
@@ -38,4 +46,3 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 func _on_damage_area_body_entered(body):
 	if body.has_method("player_hit"):
 		body.player_hit()
-	
