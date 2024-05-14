@@ -5,6 +5,7 @@ var canshoot = true
 
 @onready var spawnpos = $SpawnPosition
 @onready var muzzleflash = $MuzzleFlashAnimation
+@onready var car_sprite = $AnimatedSprite
 
 const ACCELERATION = 1000
 const FRICTION = 600
@@ -56,6 +57,15 @@ func shoot ():
 func player_hit():
 	health -= 1
 	Global.health -= 1
+	
+	
+	$AnimatedSprite.modulate = Color.DARK_RED
+	await get_tree().create_timer(0.1).timeout
+	$AnimatedSprite.modulate = Color.WHITE
+	
+	
+	
 	if health == 0:
 		get_tree().change_scene_to_file("res://Scenes/Menu/game_over.tscn")
 		queue_free()
+		
