@@ -7,10 +7,9 @@
 [ext_resource type="Script" path="res://Scenes/MainScene/SpawnTimer.gd" id="4_lndq8"]
 [ext_resource type="Script" path="res://Scenes/MainScene/DisplayHP.gd" id="5_i1t1g"]
 [ext_resource type="Script" path="res://Scenes/MainScene/DisplayScore.gd" id="6_4n6hb"]
+[ext_resource type="Texture2D" uid="uid://cpjn0s8enagpg" path="res://Assets/HP.png" id="6_i8dvb"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Background.gd" id="8_p2q4e"]
 [ext_resource type="Texture2D" uid="uid://dogyvl4glwhi8" path="res://Assets/BG test.jpg" id="9_w7vak"]
-
-[sub_resource type="FontVariation" id="FontVariation_0glf1"]
 
 [sub_resource type="FontVariation" id="FontVariation_smcdk"]
 
@@ -42,16 +41,10 @@ anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 
-[node name="HP" type="Label" parent="CanvasLayer/UI/Control"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = -35.0
-offset_right = 260.0
-offset_bottom = 139.0
-theme_override_fonts/font = SubResource("FontVariation_0glf1")
-theme_override_font_sizes/font_size = 80
-text = "HP:"
-vertical_alignment = 1
+[node name="HP" type="Sprite2D" parent="CanvasLayer/UI/Control"]
+position = Vector2(133, 55)
+scale = Vector2(0.62207, 0.62207)
+texture = ExtResource("6_i8dvb")
 
 [node name="DisplayHP" type="Label" parent="CanvasLayer/UI/Control"]
 layout_mode = 0
@@ -66,20 +59,20 @@ script = ExtResource("5_i1t1g")
 
 [node name="Score" type="Label" parent="CanvasLayer/UI/Control"]
 layout_mode = 0
-offset_left = 1514.0
-offset_top = -12.0
-offset_right = 1994.0
-offset_bottom = 154.0
+offset_left = 1432.0
+offset_top = 5.0
+offset_right = 1912.0
+offset_bottom = 171.0
 theme_override_fonts/font = SubResource("FontVariation_jr3ij")
 theme_override_font_sizes/font_size = 80
 text = "Score:"
 
 [node name="DisplayScore" type="Label" parent="CanvasLayer/UI/Control"]
 layout_mode = 0
-offset_left = 1803.0
-offset_top = -6.0
-offset_right = 2404.0
-offset_bottom = 124.0
+offset_left = 1694.0
+offset_top = 8.0
+offset_right = 2295.0
+offset_bottom = 138.0
 theme_override_fonts/font = SubResource("FontVariation_enque")
 theme_override_font_sizes/font_size = 80
 text = "0"
