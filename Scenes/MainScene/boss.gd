@@ -67,5 +67,6 @@ func shoot():
 func enemy_hit():
 	Health -= 1
 	if Health == 0:
+		Global.camera.screen_shake(25, 25, 0.1)
 		Global.score += 100
 		queue_free()

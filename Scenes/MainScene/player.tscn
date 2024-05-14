@@ -202,7 +202,7 @@ shape = SubResource("RectangleShape2D_5niuo")
 position = Vector2(184, 11)
 
 [node name="AttackSpeedTimer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.25
 
 [node name="MuzzleFlash" type="Sprite2D" parent="."]
 visible = false

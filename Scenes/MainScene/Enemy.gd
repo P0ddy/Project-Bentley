@@ -7,7 +7,7 @@ var player = null
 var canshoot = true
 
 @export var speed = 3
-var health = 4
+var health = 6
 
 @onready var spawnpos = $Spawnpos
 @onready var muzzleflash = $MuzzleFlash
@@ -49,25 +49,18 @@ func enemy_hit():
 	hit_sound.play()
 	
 	if health == 0:
-		Global.camera.screen_shake(7, 7, 0.05)
-		Global.score += 5
+		Global.camera.screen_shake(10, 10, 0.05)
+		Global.score += 6
 		queue_free()
 		
 	if health == 0:
 		$DeathSound.play()
-		
-		
 		
 	if health == 0:
 		var explosion = Explosion.instantiate()
 		explosion.global_position = global_position
 		get_tree().current_scene.add_child(explosion)
 		
-		
-		
-		
-
-
 
 
 
