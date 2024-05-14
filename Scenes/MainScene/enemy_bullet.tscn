@@ -1,10 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyoimxu410hok"]
+[gd_scene load_steps=8 format=3 uid="uid://dyoimxu410hok"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/enemy_bullet.gd" id="1_hj32a"]
-[ext_resource type="Texture2D" uid="uid://bqosdr2ahmb0d" path="res://Assets/Bullet.png" id="1_vsd7t"]
+[ext_resource type="Texture2D" uid="uid://ur4lqhfpo1ys" path="res://Assets/Bullets/AlienBullet.png" id="2_suw6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hk6pr"]
 size = Vector2(30, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8boji"]
+atlas = ExtResource("2_suw6a")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x26pj"]
+atlas = ExtResource("2_suw6a")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpcn4"]
+atlas = ExtResource("2_suw6a")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8pvj1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8boji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x26pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpcn4")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [node name="EnemyBullet" type="Area2D"]
 script = ExtResource("1_hj32a")
@@ -13,10 +42,12 @@ script = ExtResource("1_hj32a")
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_hk6pr")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.803922, 0, 0, 1)
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0.512707, 0.494029, 1)
 scale = Vector2(5, 5)
-texture = ExtResource("1_vsd7t")
+sprite_frames = SubResource("SpriteFrames_8pvj1")
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="DespawnTimer" type="Timer" parent="."]
 wait_time = 10.0
