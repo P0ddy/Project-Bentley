@@ -7,6 +7,7 @@ var canshoot = true
 @onready var muzzleflash = $MuzzleFlashAnimation
 @onready var car_sprite = $AnimatedSprite
 @onready var GetDamageSound = $GetDamage
+@onready var ShootingSound = $ShootingSound
 
 const ACCELERATION = 1200
 const FRICTION = 750
@@ -46,6 +47,7 @@ func _on_attack_speed_timer_timeout():
 func _process(_delta):
 	if Input.is_action_pressed("shoot") and canshoot:
 		shoot()
+		ShootingSound.play()
 
 func shoot ():
 	var bullet = Bullet.instantiate()
@@ -71,3 +73,4 @@ func player_hit():
 		get_tree().change_scene_to_file("res://Scenes/Menu/game_over.tscn")
 		queue_free()
 		
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bffmd8v2aatj"]
+[gd_scene load_steps=32 format=3 uid="uid://bffmd8v2aatj"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/player.gd" id="1_u2hrs"]
 [ext_resource type="Texture2D" uid="uid://bqroux18ckpri" path="res://Assets/Cars/StandardCar/Car1-driving-idle-Shee-WITHOUT-FLAMEt.png" id="2_acln5"]
@@ -185,8 +185,6 @@ stream_2/weight = 1.0
 stream_3/stream = ExtResource("9_8ypnq")
 stream_3/weight = 1.0
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rwwgp"]
-
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(338, 182)
 motion_mode = 1
@@ -237,9 +235,5 @@ stream = ExtResource("5_t36ud")
 [node name="IdleSound" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_nmv6s")
 autoplay = true
-
-[node name="ShootingSound" type="AudioStreamPlayer2D" parent="."]
-stream = SubResource("AudioStreamRandomizer_rwwgp")
-pitch_scale = 2.04
 
 [connection signal="timeout" from="AttackSpeedTimer" to="." method="_on_attack_speed_timer_timeout"]
