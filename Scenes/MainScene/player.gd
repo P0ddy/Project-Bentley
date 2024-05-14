@@ -6,6 +6,8 @@ var canshoot = true
 @onready var spawnpos = $SpawnPosition
 @onready var muzzleflash = $MuzzleFlashAnimation
 @onready var car_sprite = $AnimatedSprite
+@onready var GetDamageSound = $GetDamage
+@onready var IdleSound = $PlayerIdleAudio
 
 const ACCELERATION = 1200
 const FRICTION = 750
@@ -18,6 +20,7 @@ func _physics_process(delta):
 
 func move(delta):
 	var input_vector = Input.get_vector("left", "right", "up", "down")
+	IdleSound.play()
 	if input_vector == Vector2.ZERO:
 		apply_friction(FRICTION * delta)
 	else:
@@ -25,6 +28,7 @@ func move(delta):
 	move_and_slide()
 	global_position.x = clamp(global_position.x ,0 ,1920)
 	global_position.y = clamp(global_position.y ,0 ,1080)
+	
 
 
 func apply_movement(amount) -> void:
@@ -58,7 +62,7 @@ func player_hit():
 	health -= 1
 	Global.health -= 1
 	
-	
+	GetDamageSound.play()
 	$AnimatedSprite.modulate = Color.DARK_RED
 	await get_tree().create_timer(0.1).timeout
 	$AnimatedSprite.modulate = Color.WHITE
