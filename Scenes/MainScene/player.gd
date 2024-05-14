@@ -7,9 +7,9 @@ var canshoot = true
 @onready var muzzleflash = $MuzzleFlashAnimation
 @onready var car_sprite = $AnimatedSprite
 
-const ACCELERATION = 1000
-const FRICTION = 600
-const MAX_SPEED = 400
+const ACCELERATION = 1200
+const FRICTION = 750
+const MAX_SPEED = 450
 
 var health = 3
 
