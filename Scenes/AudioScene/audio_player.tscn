@@ -3,6 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://bpjvf80yjepfs" path="res://Audio/Music/TestTrack.mp3" id="1_f5vyh"]
 
 [node name="AudioPlayer" type="AudioStreamPlayer"]
+process_mode = 3
 stream = ExtResource("1_f5vyh")
 autoplay = true
 bus = &"Music"

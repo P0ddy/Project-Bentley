@@ -10,8 +10,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Mid Color" type="ColorRect" parent="."]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Mid Color" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.12
 anchor_top = 0.235
@@ -25,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.307106, 0.503942, 0.531524, 1)
 
-[node name="OptionsText" type="Label" parent="Mid Color"]
+[node name="OptionsText" type="Label" parent="CanvasLayer/Mid Color"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,7 +45,7 @@ theme_override_font_sizes/font_size = 111
 text = "Settings
 "
 
-[node name="MarginContainer" type="MarginContainer" parent="Mid Color"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Mid Color"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,12 +58,12 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(-1109, -407)
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="Mid Color/MarginContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/Mid Color/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 130
 
-[node name="FullScreen" type="Label" parent="Mid Color/MarginContainer/HBoxContainer4"]
+[node name="FullScreen" type="Label" parent="CanvasLayer/Mid Color/MarginContainer/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -73,18 +74,18 @@ theme_override_font_sizes/font_size = 111
 text = "Fullscreen
 "
 
-[node name="CheckButton" type="CheckButton" parent="Mid Color/MarginContainer/HBoxContainer4"]
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/Mid Color/MarginContainer/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 6
 
-[node name="Sliders" type="VBoxContainer" parent="Mid Color"]
+[node name="Sliders" type="VBoxContainer" parent="CanvasLayer/Mid Color"]
 layout_mode = 0
 offset_left = 882.0
 offset_top = 59.0
 offset_right = 1355.0
 offset_bottom = 586.0
 
-[node name="MasterVoume" type="Label" parent="Mid Color/Sliders"]
+[node name="MasterVoume" type="Label" parent="CanvasLayer/Mid Color/Sliders"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 40
@@ -92,11 +93,11 @@ theme_override_font_sizes/font_size = 112
 text = "Volume
 "
 
-[node name="VolumeSlider" parent="Mid Color/Sliders" instance=ExtResource("1_jknxo")]
+[node name="VolumeSlider" parent="CanvasLayer/Mid Color/Sliders" instance=ExtResource("1_jknxo")]
 layout_mode = 2
 bus_name = "Master"
 
-[node name="MusicVolume" type="Label" parent="Mid Color/Sliders"]
+[node name="MusicVolume" type="Label" parent="CanvasLayer/Mid Color/Sliders"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 40
@@ -104,23 +105,22 @@ theme_override_font_sizes/font_size = 112
 text = "Music
 "
 
-[node name="VolumeSlider2" parent="Mid Color/Sliders" instance=ExtResource("1_jknxo")]
+[node name="VolumeSlider2" parent="CanvasLayer/Mid Color/Sliders" instance=ExtResource("1_jknxo")]
 layout_mode = 2
 bus_name = "Music"
 
-[node name="SFXVoume" type="Label" parent="Mid Color/Sliders"]
+[node name="SFXVoume" type="Label" parent="CanvasLayer/Mid Color/Sliders"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 40
 theme_override_font_sizes/font_size = 112
 text = "SFX"
 
-[node name="VolumeSlider3" parent="Mid Color/Sliders" instance=ExtResource("1_jknxo")]
+[node name="VolumeSlider3" parent="CanvasLayer/Mid Color/Sliders" instance=ExtResource("1_jknxo")]
 layout_mode = 2
 bus_name = "SFX"
 
-[node name="BackToMenuButton" type="Button" parent="."]
-layout_mode = 1
+[node name="BackToMenuButton" type="Button" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
