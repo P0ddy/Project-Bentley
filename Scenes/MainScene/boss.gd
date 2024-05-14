@@ -5,7 +5,7 @@ var Bullet = preload("res://Scenes/MainScene/boss_bullet.tscn")
 var canshoot = false
 var player = null
 
-var speed = 1
+var speed = 2
 var Health = 100
 
 var is_travelling = false  # Umbenannt von 'travel'
@@ -43,21 +43,21 @@ func travel():
 		move_down()
 
 func move_up():
-	position.y += speed
+	position.y += 4
 
 func move_down():
-	position.y -= speed
+	position.y -= 2
 
 func _on_shootspeed_timeout():
 	canshoot = true
 
 func shoot():
 	if canshoot:
-		var bullet = Bullet.instance()
+		var bullet = Bullet.instantiate()
 		bullet.position = spawnpos1.global_position
 		get_parent().add_child(bullet)
 		
-		var bullet2 = Bullet.instance()
+		var bullet2 = Bullet.instantiate()
 		bullet2.position = spawnpos2.global_position
 		get_parent().add_child(bullet2)
 		

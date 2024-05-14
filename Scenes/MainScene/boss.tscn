@@ -4,36 +4,40 @@
 [ext_resource type="Script" path="res://Scenes/MainScene/boss.gd" id="1_h6xpb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpjg4"]
-size = Vector2(361, 323)
+size = Vector2(378.5, 323)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4cgqg"]
-radius = 1053.0
-height = 2844.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_5oa5w"]
+radius = 689.21
 
 [node name="Boss" type="CharacterBody2D"]
 script = ExtResource("1_h6xpb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(107.39, 0)
 scale = Vector2(20, 20)
 texture = ExtResource("1_6vs40")
 region_enabled = true
 region_rect = Rect2(0, 0, 29, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-90.5, 0.5)
+position = Vector2(8.75, 0)
 shape = SubResource("RectangleShape2D_hpjg4")
 
 [node name="Spawnpos1" type="Marker2D" parent="."]
+position = Vector2(-133, -160)
 
 [node name="Spawnpos2" type="Marker2D" parent="."]
+position = Vector2(-119, 156)
 
 [node name="shootspeed" type="Timer" parent="."]
 autostart = true
 
 [node name="Detection" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
-shape = SubResource("CapsuleShape2D_4cgqg")
+visible = false
+shape = SubResource("CircleShape2D_5oa5w")
 
 [connection signal="timeout" from="shootspeed" to="." method="_on_shootspeed_timeout"]
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
