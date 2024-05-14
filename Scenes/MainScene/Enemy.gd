@@ -6,7 +6,7 @@ var player = null
 var canshoot = true
 
 @export var speed = 3
-var health = 6
+var health = 4
 
 @onready var spawnpos = $Spawnpos
 @onready var muzzleflash = $MuzzleFlash
