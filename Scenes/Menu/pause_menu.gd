@@ -8,6 +8,11 @@ extends Control
 func _ready():
 	get_tree().paused = true
 
+func resume():
+	get_tree().paused = false
+
+
+
 func _on_continue_button_button_down():
 	get_tree().paused = false
 	queue_free()
@@ -22,3 +27,7 @@ func _on_options_button_pressed():
 		var pause_options_menu = pause_options_menu_instance as PauseMenu
 		ui_panel.add_child(pause_options_menu)
 
+func _process(delta):
+	if Input.is_action_pressed("Pause"):
+		get_tree().paused = false
+		queue_free() 
