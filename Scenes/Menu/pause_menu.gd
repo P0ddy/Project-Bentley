@@ -2,7 +2,6 @@ class_name PauseMenu
 extends Control
 
 
-@export var pause_menu_options_packed_scene : PackedScene = null
 @onready var ui_panel = $CanvasLayer as CanvasLayer
 
 func _ready():
@@ -21,13 +20,19 @@ func _on_main_menu_button_button_down():
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/Menu/main_menu.tscn")
 
-func _on_options_button_pressed():
-	var pause_options_menu_instance = pause_menu_options_packed_scene.instance()
-	if pause_options_menu_instance:
-		var pause_options_menu = pause_options_menu_instance as PauseMenu
-		ui_panel.add_child(pause_options_menu)
+
 
 func _process(delta):
 	if Input.is_action_pressed("Pause"):
 		get_tree().paused = false
 		queue_free() 
+
+#Fullscreen Toggle
+
+func _on_check_button_toggled(toggled_on):
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+	

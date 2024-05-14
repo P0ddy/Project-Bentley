@@ -166,7 +166,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 14.26
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
@@ -211,5 +211,6 @@ scale = Vector2(10.75, 10.75)
 sprite_frames = SubResource("SpriteFrames_vecvy")
 animation = &"Idle"
 autoplay = "Idle"
+frame_progress = 0.839186
 
 [connection signal="timeout" from="AttackSpeedTimer" to="." method="_on_attack_speed_timer_timeout"]
