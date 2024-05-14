@@ -73,6 +73,7 @@ func player_hit():
 		get_tree().change_scene_to_file("res://Scenes/Menu/game_over.tscn")
 		queue_free()
 		
+		
 
 
 

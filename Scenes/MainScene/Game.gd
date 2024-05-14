@@ -27,3 +27,7 @@ func _on_bosstimer_timeout():
 	boss.position = Vector2(randf_range(2100, 3100), randf_range(320, 320))
 	add_child(boss)
 	$Bosstimer.stop()
+
+
+	
+	
