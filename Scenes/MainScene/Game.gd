@@ -16,7 +16,7 @@ func _on_spawn_timer_timeout():
 
 # Options Scipt
 @export var pause_menu_packed_scene : PackedScene = null
-@onready var ui_container = $CanvasLayer as CanvasLayer	
+@onready var ui_container = $CanvasLayer as CanvasLayer
 
 func _unhandled_input(event) -> void:
 	if event.is_action("Pause"):
