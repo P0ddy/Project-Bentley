@@ -1,6 +1,6 @@
 extends Timer
 
-var mintime = 1
+var mintime = 2
 var maxtime = 5
 
 func _ready():

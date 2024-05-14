@@ -18,7 +18,9 @@ script = ExtResource("1_xlrje")
 
 [node name="ButtonClick" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_ej65s")
+bus = &"SFX"
 
 [node name="MainTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_f5vyh")
 autoplay = true
+bus = &"Music"
