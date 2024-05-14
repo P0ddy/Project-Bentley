@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 
 @export var minspeed = 50
 @export var maxspeed = 250
