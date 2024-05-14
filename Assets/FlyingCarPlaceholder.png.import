@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dp0s77m5y3fm6"
-path="res://.godot/imported/FlyingCar.png-6705e675e3a02c6d44eae4f9eaefd9dc.ctex"
+path="res://.godot/imported/FlyingCarPlaceholder.png-8664b2c8c365396cb18872af5a644bc3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FlyingCar.png"
-dest_files=["res://.godot/imported/FlyingCar.png-6705e675e3a02c6d44eae4f9eaefd9dc.ctex"]
+source_file="res://Assets/FlyingCarPlaceholder.png"
+dest_files=["res://.godot/imported/FlyingCarPlaceholder.png-8664b2c8c365396cb18872af5a644bc3.ctex"]
 
 [params]
 
