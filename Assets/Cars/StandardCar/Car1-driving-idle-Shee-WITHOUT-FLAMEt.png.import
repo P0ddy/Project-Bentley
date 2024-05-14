@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp0lapmy514bb"
-path="res://.godot/imported/Car1-driving-idle-Sheet-FLAME-ONLY.png-3eb1d10656dc89f9baace5001d8d082e.ctex"
+uid="uid://bqroux18ckpri"
+path="res://.godot/imported/Car1-driving-idle-Shee-WITHOUT-FLAMEt.png-ed4a0cb4695c500681115dd8287b40a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Car1-driving-idle-Sheet-FLAME-ONLY.png"
-dest_files=["res://.godot/imported/Car1-driving-idle-Sheet-FLAME-ONLY.png-3eb1d10656dc89f9baace5001d8d082e.ctex"]
+source_file="res://Assets/Cars/StandardCar/Car1-driving-idle-Shee-WITHOUT-FLAMEt.png"
+dest_files=["res://.godot/imported/Car1-driving-idle-Shee-WITHOUT-FLAMEt.png-ed4a0cb4695c500681115dd8287b40a1.ctex"]
 
 [params]
 

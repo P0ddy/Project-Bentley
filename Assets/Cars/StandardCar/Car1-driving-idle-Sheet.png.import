@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dp0s77m5y3fm6"
-path="res://.godot/imported/FlyingCarPlaceholder.png-8664b2c8c365396cb18872af5a644bc3.ctex"
+uid="uid://chmkq5jlq6tfd"
+path="res://.godot/imported/Car1-driving-idle-Sheet.png-e8b6804dc51485c1318b52cfe2181ebe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FlyingCarPlaceholder.png"
-dest_files=["res://.godot/imported/FlyingCarPlaceholder.png-8664b2c8c365396cb18872af5a644bc3.ctex"]
+source_file="res://Assets/Cars/StandardCar/Car1-driving-idle-Sheet.png"
+dest_files=["res://.godot/imported/Car1-driving-idle-Sheet.png-e8b6804dc51485c1318b52cfe2181ebe.ctex"]
 
 [params]
 

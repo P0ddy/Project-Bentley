@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://df2u7u7wedi5c"]
+[gd_scene load_steps=16 format=3 uid="uid://df2u7u7wedi5c"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/Enemy.gd" id="1_k3467"]
 [ext_resource type="Texture2D" uid="uid://dl1m1byu24q5n" path="res://Assets/Ufo-Idle-Sheet.png" id="2_3khfd"]
@@ -6,6 +6,63 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sarjd"]
 size = Vector2(95, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yri6"]
+atlas = ExtResource("2_3khfd")
+region = Rect2(0, 0, 35, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l7yv"]
+atlas = ExtResource("2_3khfd")
+region = Rect2(35, 0, 35, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0soh"]
+atlas = ExtResource("2_3khfd")
+region = Rect2(70, 0, 35, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur43s"]
+atlas = ExtResource("2_3khfd")
+region = Rect2(105, 0, 35, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2osr"]
+atlas = ExtResource("2_3khfd")
+region = Rect2(140, 0, 35, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhnfy"]
+atlas = ExtResource("2_3khfd")
+region = Rect2(175, 0, 35, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1r0om"]
+atlas = ExtResource("2_3khfd")
+region = Rect2(210, 0, 35, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kso04"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yri6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l7yv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0soh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur43s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2osr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhnfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1r0om")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_b635o"]
 resource_name = "MuzzleFlash"
@@ -51,11 +108,12 @@ script = ExtResource("1_k3467")
 position = Vector2(-24.5, 0)
 shape = SubResource("RectangleShape2D_sarjd")
 
-[node name="EnemySprite" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(5, 5)
-texture = ExtResource("2_3khfd")
-region_enabled = true
-region_rect = Rect2(0, 0, 29, 15)
+sprite_frames = SubResource("SpriteFrames_kso04")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.418176
 
 [node name="Spawnpos" type="Marker2D" parent="."]
 position = Vector2(-63, 30)
@@ -66,9 +124,8 @@ libraries = {
 }
 
 [node name="SpriteMuzzle" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-60.5778, 29.0242)
-rotation = 0.349066
+rotation = 0.785398
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_7l023")
 region_enabled = true
