@@ -7,7 +7,6 @@ var canshoot = true
 @onready var muzzleflash = $MuzzleFlashAnimation
 @onready var car_sprite = $AnimatedSprite
 @onready var GetDamageSound = $GetDamage
-@onready var IdleSound = $PlayerIdleAudio
 
 const ACCELERATION = 1200
 const FRICTION = 750
@@ -20,7 +19,6 @@ func _physics_process(delta):
 
 func move(delta):
 	var input_vector = Input.get_vector("left", "right", "up", "down")
-	IdleSound.play()
 	if input_vector == Vector2.ZERO:
 		apply_friction(FRICTION * delta)
 	else:
