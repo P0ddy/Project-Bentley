@@ -11,6 +11,7 @@ var health = 4
 
 @onready var spawnpos = $Spawnpos
 @onready var muzzleflash = $MuzzleFlash
+@onready var enemy_sprite = $AnimatedSprite2D
 
 func _on_detection_body_entered(body):
 	if body.is_in_group("Player"):
@@ -40,9 +41,16 @@ func shoot():
 
 func enemy_hit():
 	health -= 1
+	$AnimatedSprite2D.modulate = Color.DARK_RED
+	await get_tree().create_timer(0.1).timeout
+	$AnimatedSprite2D.modulate = Color.WHITE
+	
 	if health == 0:
 		Global.score += 5
 		queue_free()
+	
+		
+		
 		
 	if health == 0:
 		var explosion = Explosion.instantiate()
