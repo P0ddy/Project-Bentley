@@ -61,7 +61,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 9.67
 }]
 
 [sub_resource type="Animation" id="Animation_b635o"]
@@ -113,7 +113,7 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_kso04")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.0795094
+frame_progress = 0.0450559
 
 [node name="Spawnpos" type="Marker2D" parent="."]
 position = Vector2(-63, 30)

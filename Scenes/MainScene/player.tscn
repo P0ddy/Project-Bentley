@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://bffmd8v2aatj"]
+[gd_scene load_steps=27 format=3 uid="uid://bffmd8v2aatj"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/player.gd" id="1_u2hrs"]
 [ext_resource type="Texture2D" uid="uid://bqroux18ckpri" path="res://Assets/Cars/StandardCar/Car1-driving-idle-Shee-WITHOUT-FLAMEt.png" id="2_acln5"]
 [ext_resource type="Texture2D" uid="uid://0y15fyppumw6" path="res://Assets/muzzle3.png" id="3_fca2x"]
 [ext_resource type="Texture2D" uid="uid://dp0lapmy514bb" path="res://Assets/Cars/StandardCar/Car1-driving-idle-Sheet-FLAME-ONLY.png" id="3_rrcaj"]
+[ext_resource type="AudioStream" uid="uid://cp5bf2vyxjs8q" path="res://Audio/SFX/Player/GetDamage.wav" id="5_t36ud"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fidsd"]
 atlas = ExtResource("2_acln5")
@@ -212,5 +213,8 @@ sprite_frames = SubResource("SpriteFrames_vecvy")
 animation = &"Idle"
 autoplay = "Idle"
 frame_progress = 0.839186
+
+[node name="GetDamage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_t36ud")
 
 [connection signal="timeout" from="AttackSpeedTimer" to="." method="_on_attack_speed_timer_timeout"]
