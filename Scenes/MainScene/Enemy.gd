@@ -46,6 +46,7 @@ func enemy_hit():
 	$AnimatedSprite2D.modulate = Color.WHITE
 	
 	if health == 0:
+		Global.camera.screen_shake(7, 7, 0.05)
 		Global.score += 5
 		queue_free()
 	
