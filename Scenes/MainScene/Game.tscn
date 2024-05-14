@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxhjh00lqxlnv"]
+[gd_scene load_steps=14 format=3 uid="uid://bxhjh00lqxlnv"]
 
 [ext_resource type="PackedScene" uid="uid://bffmd8v2aatj" path="res://Scenes/MainScene/player.tscn" id="1_0v76o"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Game.gd" id="1_5rsoo"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://Scenes/MainScene/SpawnTimer.gd" id="4_lndq8"]
 [ext_resource type="Script" path="res://Scenes/MainScene/DisplayHP.gd" id="5_i1t1g"]
 [ext_resource type="Script" path="res://Scenes/MainScene/DisplayScore.gd" id="6_4n6hb"]
+[ext_resource type="Script" path="res://Scenes/MainScene/Background.gd" id="8_p2q4e"]
+[ext_resource type="Texture2D" uid="uid://dogyvl4glwhi8" path="res://Assets/BG test.jpg" id="9_w7vak"]
 
 [sub_resource type="FontVariation" id="FontVariation_0glf1"]
 
@@ -82,5 +84,17 @@ theme_override_fonts/font = SubResource("FontVariation_enque")
 theme_override_font_sizes/font_size = 80
 text = "0"
 script = ExtResource("6_4n6hb")
+
+[node name="Background" type="ParallaxBackground" parent="."]
+script = ExtResource("8_p2q4e")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxLayer"]
+position = Vector2(960, 540)
+texture = ExtResource("9_w7vak")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

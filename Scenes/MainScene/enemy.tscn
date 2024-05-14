@@ -105,7 +105,7 @@ motion_mode = 1
 script = ExtResource("1_k3467")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-24.5, 0)
+position = Vector2(-31, 0)
 shape = SubResource("RectangleShape2D_sarjd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -124,7 +124,8 @@ libraries = {
 }
 
 [node name="SpriteMuzzle" type="Sprite2D" parent="."]
-position = Vector2(-60.5778, 29.0242)
+visible = false
+position = Vector2(-75, 28)
 rotation = 0.785398
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_7l023")
