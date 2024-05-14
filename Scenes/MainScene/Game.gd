@@ -2,6 +2,7 @@ class_name MainGame
 extends Node2D
 
 var Enemy = preload("res://Scenes/MainScene/enemy.tscn")
+var Boss = preload("res://Scenes/MainScene/boss.tscn")
 
 func _on_spawn_timer_timeout():
 	var enemy = Enemy.instantiate()
@@ -18,3 +19,11 @@ func _unhandled_input(event) -> void:
 		var new_pause_menu : PauseMenu = pause_menu_packed_scene.instantiate()
 		
 		ui_container.add_child(new_pause_menu)
+
+
+func _on_bosstimer_timeout():
+	$SpawnTimer.stop()
+	var boss = Boss.instantiate()
+	boss.position = Vector2(randf_range(2100, 3100), randf_range(320, 320))
+	add_child(boss)
+	$Bosstimer.stop()

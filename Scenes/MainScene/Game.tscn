@@ -32,6 +32,10 @@ position = Vector2(2352, 485)
 autostart = true
 script = ExtResource("4_lndq8")
 
+[node name="Bosstimer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" type="Node2D" parent="CanvasLayer"]
@@ -99,4 +103,5 @@ script = ExtResource("11_xfkbu")
 autostart = true
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="Bosstimer" to="." method="_on_bosstimer_timeout"]
 [connection signal="timeout" from="Camera/Shaketime" to="Camera" method="_on_shaketime_timeout"]
