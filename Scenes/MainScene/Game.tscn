@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bxhjh00lqxlnv"]
+[gd_scene load_steps=20 format=3 uid="uid://bxhjh00lqxlnv"]
 
 [ext_resource type="PackedScene" uid="uid://bffmd8v2aatj" path="res://Scenes/MainScene/player.tscn" id="1_0v76o"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Game.gd" id="1_5rsoo"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cpjn0s8enagpg" path="res://Assets/HP.png" id="6_i8dvb"]
 [ext_resource type="PackedScene" uid="uid://hxv8ns0db8i0" path="res://Scenes/MainScene/vel.tscn" id="6_uldu1"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Background.gd" id="8_p2q4e"]
+[ext_resource type="FontFile" uid="uid://f7mrciexqi7f" path="res://Assets/Fonts/SPACE RETRO.TTF" id="10_2mv47"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Camera.gd" id="11_xfkbu"]
 [ext_resource type="PackedScene" uid="uid://cuyb3s030kqqs" path="res://Scenes/MainScene/PickUps/health_pick_up.tscn" id="12_upobf"]
 [ext_resource type="Texture2D" uid="uid://06ljkvg0dv4a" path="res://Assets/BackGround/Parallax_Background_A.png" id="13_t0eib"]
@@ -18,12 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://g6n13kuw400b" path="res://Assets/BackGround/Parallax_Background_C.png" id="15_1qupc"]
 [ext_resource type="Texture2D" uid="uid://di6mdlyjrhcv5" path="res://Assets/BackGround/Parallax_Background_D.png" id="16_52iaw"]
 [ext_resource type="Texture2D" uid="uid://3sl6ck5bhsp5" path="res://Assets/BackGround/Parallax_Background_E.png" id="17_03452"]
-
-[sub_resource type="FontVariation" id="FontVariation_smcdk"]
-
-[sub_resource type="FontVariation" id="FontVariation_jr3ij"]
-
-[sub_resource type="FontVariation" id="FontVariation_enque"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5rsoo")
@@ -73,34 +68,40 @@ texture = ExtResource("6_i8dvb")
 
 [node name="DisplayHP" type="Label" parent="CanvasLayer/UI/Control"]
 layout_mode = 0
-offset_left = 179.0
-offset_top = -2.0
+offset_left = 188.0
+offset_top = 9.0
 offset_right = 378.0
 offset_bottom = 122.0
-theme_override_fonts/font = SubResource("FontVariation_smcdk")
-theme_override_font_sizes/font_size = 80
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_2mv47")
+theme_override_font_sizes/font_size = 90
 text = "3"
+vertical_alignment = 1
 script = ExtResource("5_i1t1g")
 
 [node name="Score" type="Label" parent="CanvasLayer/UI/Control"]
 layout_mode = 0
-offset_left = 1432.0
-offset_top = 5.0
-offset_right = 1912.0
-offset_bottom = 171.0
-theme_override_fonts/font = SubResource("FontVariation_jr3ij")
-theme_override_font_sizes/font_size = 80
-text = "Score:"
+offset_left = 1428.0
+offset_top = 2.0
+offset_right = 1894.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_2mv47")
+theme_override_font_sizes/font_size = 79
+text = "Score"
+vertical_alignment = 1
 
 [node name="DisplayScore" type="Label" parent="CanvasLayer/UI/Control"]
 layout_mode = 0
-offset_left = 1694.0
+offset_left = 1728.0
 offset_top = 8.0
 offset_right = 2295.0
 offset_bottom = 138.0
-theme_override_fonts/font = SubResource("FontVariation_enque")
-theme_override_font_sizes/font_size = 80
+theme_override_colors/font_color = Color(0, 0, 0.643137, 1)
+theme_override_fonts/font = ExtResource("10_2mv47")
+theme_override_font_sizes/font_size = 90
 text = "0"
+vertical_alignment = 1
 script = ExtResource("6_4n6hb")
 
 [node name="Background" type="ParallaxBackground" parent="."]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://wgfhrt0csw1w"]
+[gd_scene load_steps=4 format=3 uid="uid://wgfhrt0csw1w"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/pause_menu.gd" id="1_c62km"]
+[ext_resource type="FontFile" uid="uid://f7mrciexqi7f" path="res://Assets/Fonts/SPACE RETRO.TTF" id="2_hi8ig"]
 [ext_resource type="PackedScene" uid="uid://bqemmj5sudlam" path="res://Scenes/Menu/volume_slider.tscn" id="3_j7qbm"]
 
 [node name="PauseMenu" type="Control"]
@@ -27,6 +28,7 @@ grow_vertical = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -34.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 24
@@ -36,45 +38,50 @@ theme_override_constants/margin_bottom = 189
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 70
+theme_override_constants/separation = 78
 alignment = 2
 
 [node name="Title" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_hi8ig")
 theme_override_font_sizes/font_size = 176
 text = "Paused"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ContinueButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(443.32, 0)
+custom_minimum_size = Vector2(443.32, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 61
+theme_override_fonts/font = ExtResource("2_hi8ig")
+theme_override_font_sizes/font_size = 65
 text = "Continue"
 
 [node name="OptionsButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(443.32, 0)
+custom_minimum_size = Vector2(443.32, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 61
+theme_override_fonts/font = ExtResource("2_hi8ig")
+theme_override_font_sizes/font_size = 65
 text = "Options"
 
 [node name="MainMenuButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(443.32, 0)
+custom_minimum_size = Vector2(443.32, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 61
+theme_override_fonts/font = ExtResource("2_hi8ig")
+theme_override_font_sizes/font_size = 65
 text = "Main Menu"
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 949.0
-offset_top = 917.0
-offset_right = 286.6
-offset_bottom = 437.2
+offset_left = 2.0
+offset_top = 623.0
+offset_right = -1202.0
+offset_bottom = -307.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(-1109, -407)
@@ -92,6 +99,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_hi8ig")
 theme_override_font_sizes/font_size = 66
 text = "Fullscreen
 "
@@ -102,14 +110,16 @@ size_flags_horizontal = 6
 
 [node name="Sliders" type="VBoxContainer" parent="CanvasLayer"]
 offset_left = 1323.0
-offset_top = 427.0
+offset_top = 422.0
 offset_right = 1796.0
-offset_bottom = 954.0
+offset_bottom = 964.0
+theme_override_constants/separation = 38
 
 [node name="MasterVoume" type="Label" parent="CanvasLayer/Sliders"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_hi8ig")
 theme_override_font_sizes/font_size = 87
 text = "Volume
 "
@@ -123,6 +133,7 @@ bus_name = "Master"
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_hi8ig")
 theme_override_font_sizes/font_size = 87
 text = "Music
 "
@@ -136,6 +147,7 @@ bus_name = "Music"
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_hi8ig")
 theme_override_font_sizes/font_size = 87
 text = "SFX"
 

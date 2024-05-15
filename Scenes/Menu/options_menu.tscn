@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8gvpvs1dpvr2"]
+[gd_scene load_steps=4 format=3 uid="uid://c8gvpvs1dpvr2"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/options_menu.gd" id="1_paq8y"]
 [ext_resource type="PackedScene" uid="uid://bqemmj5sudlam" path="res://Scenes/Menu/volume_slider.tscn" id="2_3jgbx"]
+[ext_resource type="FontFile" uid="uid://f7mrciexqi7f" path="res://Assets/Fonts/SPACE RETRO.TTF" id="2_fwc4q"]
 
 [node name="Options_Menu" type="Control"]
 layout_mode = 3
@@ -51,18 +52,20 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_fwc4q")
 theme_override_font_sizes/font_size = 111
 text = "Settings
 "
+vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Mid Color"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 63.0
-offset_top = 244.0
-offset_right = -599.4
+offset_left = 48.0
+offset_top = 280.0
+offset_right = -585.4
 offset_bottom = -235.8
 grow_horizontal = 2
 grow_vertical = 2
@@ -80,7 +83,8 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 40
-theme_override_font_sizes/font_size = 111
+theme_override_fonts/font = ExtResource("2_fwc4q")
+theme_override_font_sizes/font_size = 90
 text = "Fullscreen
 "
 
@@ -90,16 +94,18 @@ size_flags_horizontal = 6
 
 [node name="Sliders" type="VBoxContainer" parent="Mid Color"]
 layout_mode = 0
-offset_left = 882.0
-offset_top = 59.0
-offset_right = 1355.0
-offset_bottom = 586.0
+offset_left = 858.0
+offset_top = 75.0
+offset_right = 1338.0
+offset_bottom = 565.0
+theme_override_constants/separation = 20
 
 [node name="MasterVoume" type="Label" parent="Mid Color/Sliders"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 40
-theme_override_font_sizes/font_size = 112
+theme_override_fonts/font = ExtResource("2_fwc4q")
+theme_override_font_sizes/font_size = 120
 text = "Volume
 "
 
@@ -111,7 +117,8 @@ bus_name = "Master"
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 40
-theme_override_font_sizes/font_size = 112
+theme_override_fonts/font = ExtResource("2_fwc4q")
+theme_override_font_sizes/font_size = 120
 text = "Music
 "
 
@@ -123,7 +130,8 @@ bus_name = "Music"
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 40
-theme_override_font_sizes/font_size = 112
+theme_override_fonts/font = ExtResource("2_fwc4q")
+theme_override_font_sizes/font_size = 120
 text = "SFX"
 
 [node name="VolumeSlider3" parent="Mid Color/Sliders" instance=ExtResource("2_3jgbx")]
@@ -143,7 +151,8 @@ offset_right = 155.0
 offset_bottom = 479.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 81
+theme_override_fonts/font = ExtResource("2_fwc4q")
+theme_override_font_sizes/font_size = 90
 text = "Back"
 
 [connection signal="toggled" from="Mid Color/MarginContainer/HBoxContainer4/CheckButton" to="." method="_on_check_button_toggled"]
