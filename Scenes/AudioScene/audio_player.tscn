@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://6iwvbo1m5m6b"]
+[gd_scene load_steps=9 format=3 uid="uid://6iwvbo1m5m6b"]
 
-[ext_resource type="AudioStream" uid="uid://bbmyjeevnyl8l" path="res://Audio/Music/TestTrack.mp3" id="1_f5vyh"]
 [ext_resource type="Script" path="res://Scenes/AudioScene/audio_player.gd" id="1_xlrje"]
 [ext_resource type="AudioStream" uid="uid://dg76nxsecl12p" path="res://Audio/SFX/UI/Blip_Select_Mix.wav" id="2_lq12b"]
 [ext_resource type="AudioStream" uid="uid://bu2k1ttmler27" path="res://Audio/SFX/UI/Blip_Select_Mix2.wav" id="3_mjbdb"]
+[ext_resource type="AudioStream" uid="uid://crcdv0y6r5jmp" path="res://Audio/Music/MainMenuTheme.wav" id="4_yt5uq"]
 [ext_resource type="AudioStream" uid="uid://cetxmc8txfe7" path="res://Audio/SFX/Enemy/Explosion_Mix.wav" id="5_bkskt"]
+[ext_resource type="AudioStream" uid="uid://ong27xk4ih83" path="res://Audio/Music/AutoAuswahlTheme.wav" id="5_jgdfs"]
 [ext_resource type="AudioStream" uid="uid://duwfgtl3vdwqk" path="res://Audio/PickUps/HealthPickup.wav" id="6_p57gu"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ej65s"]
@@ -23,8 +24,14 @@ stream = SubResource("AudioStreamRandomizer_ej65s")
 bus = &"SFX"
 
 [node name="MainTheme" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_f5vyh")
+stream = ExtResource("4_yt5uq")
+volume_db = 11.784
 autoplay = true
+bus = &"Music"
+
+[node name="CarSelectTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jgdfs")
+volume_db = 11.271
 bus = &"Music"
 
 [node name="Explosion" type="AudioStreamPlayer" parent="."]

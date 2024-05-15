@@ -8,3 +8,15 @@ func Explosion():
 
 func HealthPickup():
 	$HealthPickup.play()
+
+func MainThemeStart():
+	$MainTheme.play()
+
+func MainThemeStop():
+	$MainTheme.stop()
+	
+func CarSelectThemeStart():
+	$CarSelectTheme.play()
+	
+func CarSelectThemeStop():
+	$CarSelectTheme.stop()
