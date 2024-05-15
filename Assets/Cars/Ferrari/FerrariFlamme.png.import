@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p4pfex6lyr1c"
-path="res://.godot/imported/Ferrari.png-c66c1819fcc6445653e7d218beaad34e.ctex"
+uid="uid://bpmy5d6olksog"
+path="res://.godot/imported/FerrariFlamme.png-e8af1c1f92b6e47745253514ae573aa4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cars/Ferrari/Ferrari.png"
-dest_files=["res://.godot/imported/Ferrari.png-c66c1819fcc6445653e7d218beaad34e.ctex"]
+source_file="res://Assets/Cars/Ferrari/FerrariFlamme.png"
+dest_files=["res://.godot/imported/FerrariFlamme.png-e8af1c1f92b6e47745253514ae573aa4.ctex"]
 
 [params]
 

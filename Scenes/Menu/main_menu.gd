@@ -8,7 +8,7 @@ extends Control
 
 func _on_start_button_button_down():
 	AudioPlayer.button_click()
-	get_tree().change_scene_to_packed(main_game_packed_scene)
+	get_tree().change_scene_to_file("res://Scenes/Menu/character_select.tscn")
 	Global.score = 0
 	Global.health = 3
 	

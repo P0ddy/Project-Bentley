@@ -1,8 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://cfksfks3n23hx"]
+[gd_scene load_steps=30 format=3 uid="uid://cfksfks3n23hx"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/character_select.gd" id="1_k3yhq"]
 [ext_resource type="Texture2D" uid="uid://bdfg71glqval6" path="res://Assets/Cars/Bus/Bus.png" id="2_sbnsk"]
-[ext_resource type="Texture2D" uid="uid://bxyor0ng5lemc" path="res://Assets/Cars/Ferrari/Ferrari.png" id="3_4nr4t"]
+[ext_resource type="Texture2D" uid="uid://p4pfex6lyr1c" path="res://Assets/Cars/Ferrari/Ferrari.png" id="3_4nr4t"]
 [ext_resource type="Texture2D" uid="uid://bqroux18ckpri" path="res://Assets/Cars/StandardCar/Car1-driving-idle-Shee-WITHOUT-FLAMEt.png" id="3_4upjr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fyimi"]
@@ -37,21 +37,37 @@ region = Rect2(444, 0, 74, 14)
 atlas = ExtResource("3_4upjr")
 region = Rect2(518, 0, 74, 14)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b608q"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnf4m"]
 atlas = ExtResource("3_4nr4t")
-region = Rect2(0, 0, 80, 20)
+region = Rect2(0, 0, 94, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b4gcg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_alu1s"]
 atlas = ExtResource("3_4nr4t")
-region = Rect2(80, 0, 80, 20)
+region = Rect2(94, 0, 94, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r5weg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdww6"]
 atlas = ExtResource("3_4nr4t")
-region = Rect2(160, 0, 80, 20)
+region = Rect2(188, 0, 94, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uwxp8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uiap"]
 atlas = ExtResource("3_4nr4t")
-region = Rect2(240, 0, 80, 20)
+region = Rect2(282, 0, 94, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wo24o"]
+atlas = ExtResource("3_4nr4t")
+region = Rect2(376, 0, 94, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyblb"]
+atlas = ExtResource("3_4nr4t")
+region = Rect2(470, 0, 94, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qah3k"]
+atlas = ExtResource("3_4nr4t")
+region = Rect2(564, 0, 94, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pb8q"]
+atlas = ExtResource("3_4nr4t")
+region = Rect2(658, 0, 94, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5suyk"]
 atlas = ExtResource("2_sbnsk")
@@ -118,16 +134,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b608q")
+"texture": SubResource("AtlasTexture_qnf4m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b4gcg")
+"texture": SubResource("AtlasTexture_alu1s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r5weg")
+"texture": SubResource("AtlasTexture_gdww6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uwxp8")
+"texture": SubResource("AtlasTexture_1uiap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wo24o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyblb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qah3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pb8q")
 }],
 "loop": true,
 "name": &"Player2",
@@ -172,7 +200,7 @@ offset_right = 1928.0
 offset_bottom = 1085.0
 
 [node name="PlayerSelect" type="AnimatedSprite2D" parent="."]
-position = Vector2(771, 527)
+position = Vector2(738, 523)
 scale = Vector2(10.75, 10.75)
 sprite_frames = SubResource("SpriteFrames_7dl6s")
 animation = &"Player3"
@@ -182,21 +210,22 @@ offset_left = 485.0
 offset_top = 499.0
 offset_right = 681.0
 offset_bottom = 566.0
-text = "Left
-"
+theme_override_font_sizes/font_size = 36
+text = "Before"
 
 [node name="RightButton" type="Button" parent="."]
 offset_left = 1252.0
 offset_top = 498.0
 offset_right = 1448.0
 offset_bottom = 565.0
-text = "Right"
+theme_override_font_sizes/font_size = 36
+text = "Next"
 
 [node name="Selected Car" type="Label" parent="."]
-offset_left = 841.0
-offset_top = 329.0
-offset_right = 1071.0
-offset_bottom = 396.0
+offset_left = 780.0
+offset_top = 315.0
+offset_right = 1010.0
+offset_bottom = 420.0
 theme_override_font_sizes/font_size = 76
 
 [node name="SelectButton" type="Button" parent="."]
@@ -204,6 +233,7 @@ offset_left = 852.0
 offset_top = 652.0
 offset_right = 1056.0
 offset_bottom = 727.0
+theme_override_font_sizes/font_size = 36
 text = "Select"
 
 [connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
