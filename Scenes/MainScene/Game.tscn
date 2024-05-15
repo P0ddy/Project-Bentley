@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cpjn0s8enagpg" path="res://Assets/HP.png" id="6_i8dvb"]
 [ext_resource type="PackedScene" uid="uid://hxv8ns0db8i0" path="res://Scenes/MainScene/vel.tscn" id="6_uldu1"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Background.gd" id="8_p2q4e"]
-[ext_resource type="FontFile" uid="uid://f7mrciexqi7f" path="res://Assets/Fonts/SPACE RETRO.TTF" id="10_2mv47"]
+[ext_resource type="FontFile" uid="uid://cdlpr8kvjg0jb" path="res://Assets/Fonts/EMULOGIC-ZREW.TTF" id="10_827yf"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Camera.gd" id="11_xfkbu"]
 [ext_resource type="PackedScene" uid="uid://cuyb3s030kqqs" path="res://Scenes/MainScene/PickUps/health_pick_up.tscn" id="12_upobf"]
 [ext_resource type="Texture2D" uid="uid://06ljkvg0dv4a" path="res://Assets/BackGround/Parallax_Background_A.png" id="13_t0eib"]
@@ -68,13 +68,13 @@ texture = ExtResource("6_i8dvb")
 
 [node name="DisplayHP" type="Label" parent="CanvasLayer/UI/Control"]
 layout_mode = 0
-offset_left = 188.0
-offset_top = 9.0
+offset_left = 181.0
+offset_top = 11.0
 offset_right = 378.0
-offset_bottom = 122.0
+offset_bottom = 98.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("10_2mv47")
-theme_override_font_sizes/font_size = 90
+theme_override_fonts/font = ExtResource("10_827yf")
+theme_override_font_sizes/font_size = 60
 text = "3"
 vertical_alignment = 1
 script = ExtResource("5_i1t1g")
@@ -82,24 +82,24 @@ script = ExtResource("5_i1t1g")
 [node name="Score" type="Label" parent="CanvasLayer/UI/Control"]
 layout_mode = 0
 offset_left = 1428.0
-offset_top = 2.0
+offset_top = 23.0
 offset_right = 1894.0
-offset_bottom = 145.0
+offset_bottom = 92.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("10_2mv47")
-theme_override_font_sizes/font_size = 79
+theme_override_fonts/font = ExtResource("10_827yf")
+theme_override_font_sizes/font_size = 55
 text = "Score"
 vertical_alignment = 1
 
 [node name="DisplayScore" type="Label" parent="CanvasLayer/UI/Control"]
 layout_mode = 0
 offset_left = 1728.0
-offset_top = 8.0
+offset_top = 21.0
 offset_right = 2295.0
-offset_bottom = 138.0
+offset_bottom = 97.0
 theme_override_colors/font_color = Color(0, 0, 0.643137, 1)
-theme_override_fonts/font = ExtResource("10_2mv47")
-theme_override_font_sizes/font_size = 90
+theme_override_fonts/font = ExtResource("10_827yf")
+theme_override_font_sizes/font_size = 60
 text = "0"
 vertical_alignment = 1
 script = ExtResource("6_4n6hb")
