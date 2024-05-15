@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://6iwvbo1m5m6b"]
 
-[ext_resource type="AudioStream" uid="uid://cq3p4t3geslqo" path="res://Audio/Music/TestTrack.mp3" id="1_f5vyh"]
+[ext_resource type="AudioStream" uid="uid://bbmyjeevnyl8l" path="res://Audio/Music/TestTrack.mp3" id="1_f5vyh"]
 [ext_resource type="Script" path="res://Scenes/AudioScene/audio_player.gd" id="1_xlrje"]
 [ext_resource type="AudioStream" uid="uid://dg76nxsecl12p" path="res://Audio/SFX/UI/Blip_Select_Mix.wav" id="2_lq12b"]
 [ext_resource type="AudioStream" uid="uid://bu2k1ttmler27" path="res://Audio/SFX/UI/Blip_Select_Mix2.wav" id="3_mjbdb"]
@@ -29,11 +29,12 @@ bus = &"Music"
 
 [node name="Explosion" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_bkskt")
-volume_db = -9.457
+volume_db = -15.605
 pitch_scale = 0.53
 bus = &"SFX"
 
 [node name="HealthPickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_p57gu")
-volume_db = 5.635
+volume_db = 3.073
+pitch_scale = 1.43
 bus = &"SFX"

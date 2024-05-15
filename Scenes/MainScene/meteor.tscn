@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ft25ecra3w7y"]
+[gd_scene load_steps=9 format=3 uid="uid://ft25ecra3w7y"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/meteor.gd" id="1_otrwl"]
 [ext_resource type="Texture2D" uid="uid://bvpc1e5leh1tf" path="res://Assets/Enemy's/Asteroid-Sheet_Big.png" id="2_0jyhn"]
@@ -7,6 +7,14 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y1tup"]
 radius = 45.0444
+
+[sub_resource type="Curve" id="Curve_dulwp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.528926, 0.429947), 0.0, 0.0, 0, 0, Vector2(1, 0.290909), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_ktfet"]
+offsets = PackedFloat32Array(0, 0.0656716, 0.167164, 0.340299, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.945098, 0.247059, 0.0156863, 1, 0.898039, 0.921569, 0.0784314, 1, 0.921569, 0, 0.0431373, 1, 1, 1, 1, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qv4ys"]
 
@@ -23,6 +31,25 @@ region_enabled = true
 region_rect = Rect2(1290.72, -1.21167, 310.023, 320.653)
 script = ExtResource("3_bvte5")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Sprite2D"]
+position = Vector2(2, 0)
+scale = Vector2(2, 2)
+amount = 438
+lifetime = 3.15
+speed_scale = 2.01
+randomness = 0.81
+lifetime_randomness = 0.1
+emission_shape = 1
+emission_sphere_radius = 51.03
+gravity = Vector2(0, -200)
+radial_accel_min = -11.27
+radial_accel_max = -11.27
+scale_amount_min = 0.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_dulwp")
+color = Color(0.203922, 0, 0.027451, 1)
+color_ramp = SubResource("Gradient_ktfet")
+
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(2, 0.499998)
 scale = Vector2(4.4, 4.65)
@@ -38,16 +65,6 @@ stream = ExtResource("4_0bykt")
 volume_db = 13.833
 pitch_scale = 1.24
 bus = &"SFX"
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-amount = 143
-explosiveness = 0.25
-randomness = 0.81
-emission_shape = 1
-emission_sphere_radius = 51.03
-gravity = Vector2(0, -200)
-radial_accel_min = 2.6
-radial_accel_max = 69.11
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]
