@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://6iwvbo1m5m6b"]
+[gd_scene load_steps=11 format=3 uid="uid://6iwvbo1m5m6b"]
 
 [ext_resource type="Script" path="res://Scenes/AudioScene/audio_player.gd" id="1_xlrje"]
 [ext_resource type="AudioStream" uid="uid://dg76nxsecl12p" path="res://Audio/SFX/UI/Blip_Select_Mix.wav" id="2_lq12b"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://cetxmc8txfe7" path="res://Audio/SFX/Enemy/Explosion_Mix.wav" id="5_bkskt"]
 [ext_resource type="AudioStream" uid="uid://ong27xk4ih83" path="res://Audio/Music/AutoAuswahlTheme.wav" id="5_jgdfs"]
 [ext_resource type="AudioStream" uid="uid://duwfgtl3vdwqk" path="res://Audio/PickUps/HealthPickup.wav" id="6_p57gu"]
+[ext_resource type="AudioStream" uid="uid://jexke1x600hq" path="res://Audio/Music/Test Ingame.mp3" id="8_3syvn"]
+[ext_resource type="AudioStream" uid="uid://5t3ue4osn1c2" path="res://Audio/Music/Test Bossfight.mp3" id="9_3pe1q"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ej65s"]
 streams_count = 2
@@ -45,3 +47,11 @@ stream = ExtResource("6_p57gu")
 volume_db = 3.073
 pitch_scale = 1.43
 bus = &"SFX"
+
+[node name="InGame" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_3syvn")
+bus = &"Music"
+
+[node name="BossFight" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_3pe1q")
+bus = &"Music"

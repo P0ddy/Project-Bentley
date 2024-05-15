@@ -20,7 +20,8 @@ func _on_continue_button_button_down():
 func _on_main_menu_button_button_down():
 	AudioPlayer.button_click()
 	AudioPlayer.MainThemeStart()
-	AudioPlayer.CarSelectThemeStop() #REMOVE LATER!!!!!
+	AudioPlayer.InGameMusicStop()
+	AudioPlayer.BossFightMusicStop()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/Menu/main_menu.tscn")
 

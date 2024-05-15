@@ -20,3 +20,15 @@ func CarSelectThemeStart():
 	
 func CarSelectThemeStop():
 	$CarSelectTheme.stop()
+	
+func InGameMusicStart():
+	$InGame.play()
+
+func InGameMusicStop():
+	$InGame.stop()
+
+func BossFightMusicStart():
+	$BossFight.play()
+	
+func BossFightMusicStop():
+	$BossFight.stop()

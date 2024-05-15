@@ -24,6 +24,8 @@ func _on_detection_body_entered(body):
 
 func _ready():
 	startpos = position.y
+	AudioPlayer.BossFightMusicStart()
+	AudioPlayer.InGameMusicStop()
 
 func _physics_process(delta):
 	var movement = Vector2(-speed, 0)
@@ -72,6 +74,8 @@ func enemy_hit():
 		Global.camera.screen_shake(25, 25, 0.1)
 		Global.score += 75
 		Bossdeath.emit()
+		AudioPlayer.BossFightMusicStop()
+		AudioPlayer.InGameMusicStart()
 		queue_free()
 
 

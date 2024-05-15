@@ -22,6 +22,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0.945098, 0.247059, 0.0156863, 1, 0.898039
 script = ExtResource("1_otrwl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.765, 0.765)
 shape = SubResource("CircleShape2D_y1tup")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

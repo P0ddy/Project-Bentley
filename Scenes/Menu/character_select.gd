@@ -29,4 +29,6 @@ func _on_right_button_pressed():
 
 func _on_select_button_pressed():
 	AudioPlayer.button_click()
+	AudioPlayer.InGameMusicStart()
+	AudioPlayer.CarSelectThemeStop()
 	get_tree().change_scene_to_file("res://Scenes/MainScene/Game.tscn")
