@@ -54,7 +54,7 @@ func enemy_hit():
 		queue_free()
 		
 	if health == 0:
-		$DeathSound.play()
+		AudioPlayer.Explosion()
 		
 	if health == 0:
 		var explosion = Explosion.instantiate()

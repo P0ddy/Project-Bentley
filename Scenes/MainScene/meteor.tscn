@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ft25ecra3w7y"]
+[gd_scene load_steps=7 format=3 uid="uid://ft25ecra3w7y"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/meteor.gd" id="1_otrwl"]
 [ext_resource type="Texture2D" uid="uid://bvpc1e5leh1tf" path="res://Assets/Enemy's/Asteroid-Sheet_Big.png" id="2_0jyhn"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Sprite2D.gd" id="3_bvte5"]
+[ext_resource type="AudioStream" uid="uid://dulnaw6dvjr63" path="res://Audio/SFX/Enemy/MeteorHit.wav" id="4_0bykt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y1tup"]
 radius = 45.0444
@@ -31,6 +32,22 @@ scale = Vector2(4.4, 4.65)
 [node name="DamageShape" type="CollisionShape2D" parent="DamageArea"]
 scale = Vector2(4.93, 4.93)
 shape = SubResource("CircleShape2D_qv4ys")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0bykt")
+volume_db = 13.833
+pitch_scale = 1.24
+bus = &"SFX"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 143
+explosiveness = 0.25
+randomness = 0.81
+emission_shape = 1
+emission_sphere_radius = 51.03
+gravity = Vector2(0, -200)
+radial_accel_min = 2.6
+radial_accel_max = 69.11
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="body_entered" from="DamageArea" to="." method="_on_damage_area_body_entered"]

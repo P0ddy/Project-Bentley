@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 var Explosion = preload("res://Scenes/MainScene/explosion.tscn")
 
+@onready var sprite_damage_color = $Sprite2D
 @export var minspeed = 50
 @export var maxspeed = 250
 @export var minRotationRate = -25
@@ -29,6 +30,11 @@ func _on_detection_body_entered(body):
 
 func enemy_hit():
 	health -= 1
+	$Sprite2D.modulate = Color.DARK_RED
+	await get_tree().create_timer(0.1).timeout
+	$Sprite2D.modulate = Color.WHITE
+	$HitSound.play()
+	
 	if health == 0:
 		Global.camera.screen_shake(4, 4, 0.05)
 		Global.score += 3
@@ -38,6 +44,7 @@ func enemy_hit():
 		var explosion = Explosion.instantiate()
 		explosion.global_position = global_position
 		get_tree().current_scene.add_child(explosion)
+		AudioPlayer.Explosion()
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()

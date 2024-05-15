@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://6iwvbo1m5m6b"]
+[gd_scene load_steps=8 format=3 uid="uid://6iwvbo1m5m6b"]
 
 [ext_resource type="AudioStream" uid="uid://cq3p4t3geslqo" path="res://Audio/Music/TestTrack.mp3" id="1_f5vyh"]
 [ext_resource type="Script" path="res://Scenes/AudioScene/audio_player.gd" id="1_xlrje"]
 [ext_resource type="AudioStream" uid="uid://dg76nxsecl12p" path="res://Audio/SFX/UI/Blip_Select_Mix.wav" id="2_lq12b"]
 [ext_resource type="AudioStream" uid="uid://bu2k1ttmler27" path="res://Audio/SFX/UI/Blip_Select_Mix2.wav" id="3_mjbdb"]
+[ext_resource type="AudioStream" uid="uid://cetxmc8txfe7" path="res://Audio/SFX/Enemy/Explosion_Mix.wav" id="5_bkskt"]
+[ext_resource type="AudioStream" uid="uid://duwfgtl3vdwqk" path="res://Audio/PickUps/HealthPickup.wav" id="6_p57gu"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ej65s"]
 streams_count = 2
@@ -24,3 +26,14 @@ bus = &"SFX"
 stream = ExtResource("1_f5vyh")
 autoplay = true
 bus = &"Music"
+
+[node name="Explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_bkskt")
+volume_db = -9.457
+pitch_scale = 0.53
+bus = &"SFX"
+
+[node name="HealthPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_p57gu")
+volume_db = 5.635
+bus = &"SFX"
