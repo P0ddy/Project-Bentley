@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bx5a1c85n3e5k"
-path="res://.godot/imported/Missile-Sheet.png-ad316a5a17b25624c4e70e4cb8a0c748.ctex"
+path="res://.godot/imported/Missile-Sheet.png-44ff42ca77a80a7e9543da6f79677803.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Missile-Sheet.png"
-dest_files=["res://.godot/imported/Missile-Sheet.png-ad316a5a17b25624c4e70e4cb8a0c748.ctex"]
+source_file="res://Assets/Bullets/Missile-Sheet.png"
+dest_files=["res://.godot/imported/Missile-Sheet.png-44ff42ca77a80a7e9543da6f79677803.ctex"]
 
 [params]
 

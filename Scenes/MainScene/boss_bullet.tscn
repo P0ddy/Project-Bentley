@@ -1,7 +1,57 @@
-[gd_scene load_steps=4 format=3 uid="uid://hcj4mcj1txo5"]
+[gd_scene load_steps=11 format=3 uid="uid://hcj4mcj1txo5"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/boss_bullet.gd" id="1_vr5g6"]
-[ext_resource type="Texture2D" uid="uid://bx5a1c85n3e5k" path="res://Assets/Missile-Sheet.png" id="2_obwdq"]
+[ext_resource type="Texture2D" uid="uid://bx5a1c85n3e5k" path="res://Assets/Bullets/Missile-Sheet.png" id="2_j86ep"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg16d"]
+atlas = ExtResource("2_j86ep")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5tcs"]
+atlas = ExtResource("2_j86ep")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lrgm"]
+atlas = ExtResource("2_j86ep")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch56u"]
+atlas = ExtResource("2_j86ep")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_url5j"]
+atlas = ExtResource("2_j86ep")
+region = Rect2(128, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxhq0"]
+atlas = ExtResource("2_j86ep")
+region = Rect2(160, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvnv5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg16d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5tcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lrgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ch56u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_url5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxhq0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kgum"]
 size = Vector2(64, 24)
@@ -9,13 +59,14 @@ size = Vector2(64, 24)
 [node name="BossBullet" type="Area2D"]
 script = ExtResource("1_vr5g6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-7.15256e-07, -7.15256e-07)
 scale = Vector2(4, 4)
-texture = ExtResource("2_obwdq")
+sprite_frames = SubResource("SpriteFrames_dvnv5")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.9112
 flip_h = true
-region_enabled = true
-region_rect = Rect2(7, 2, 25, 11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-14, 0)

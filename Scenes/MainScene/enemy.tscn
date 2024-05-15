@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dh1gxt613u7q2" path="res://Audio/SFX/Enemy/movement/Bewegung_Mix.wav" id="7_ll8mq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sarjd"]
-size = Vector2(95, 76)
+size = Vector2(82, 70)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2yri6"]
 atlas = ExtResource("2_3khfd")
@@ -114,7 +114,7 @@ motion_mode = 1
 script = ExtResource("1_k3467")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-31, 0)
+position = Vector2(-36, -3)
 shape = SubResource("RectangleShape2D_sarjd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -142,7 +142,7 @@ region_enabled = true
 region_rect = Rect2(18, 4, 154, 153)
 
 [node name="ShootSpeed" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 3.3
 autostart = true
 
 [node name="Detection" type="Area2D" parent="."]

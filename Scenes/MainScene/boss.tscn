@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/MainScene/boss.gd" id="1_h6xpb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0q1px"]
-radius = 606.0
+radius = 810.0
 height = 2298.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6c1f"]

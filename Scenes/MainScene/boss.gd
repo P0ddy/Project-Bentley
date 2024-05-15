@@ -6,7 +6,7 @@ var canshoot = false
 var player = null
 
 var speed = 3
-var Health = 75
+var Health = 55
 
 var is_travelling = false  # Umbenannt von 'travel'
 
@@ -70,7 +70,7 @@ func enemy_hit():
 	Health -= 1
 	if Health == 0:
 		Global.camera.screen_shake(25, 25, 0.1)
-		Global.score += 80
+		Global.score += 75
 		Bossdeath.emit()
 		queue_free()
 
