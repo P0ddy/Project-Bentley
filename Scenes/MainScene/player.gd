@@ -9,14 +9,23 @@ var canshoot = true
 @onready var GetDamageSound = $GetDamage
 @onready var ShootingSound = $ShootingSound
 
+
+@export var KnockbackPower: int = 1000
+
 const ACCELERATION = 2800
 const FRICTION = 1300
 const MAX_SPEED = 450
 
+
+
+
 var health = 3
+
+
 
 func _physics_process(delta):
 	move(delta)
+	
 
 func move(delta):
 	var input_vector = Input.get_vector("left", "right", "up", "down")
@@ -65,10 +74,17 @@ func player_hit():
 	$AnimatedSprite.modulate = Color.DARK_RED
 	await get_tree().create_timer(0.1).timeout
 	$AnimatedSprite.modulate = Color.WHITE
+	knockback()
 	
 	
 	
 	if Global.health == 0:
 		get_tree().change_scene_to_file("res://Scenes/Menu/game_over.tscn")
 		queue_free()
+		
+func knockback():
+	var KnockbackDirection = -velocity.normalized() * KnockbackPower
+	velocity = KnockbackDirection
+	move_and_slide()
+
 		
