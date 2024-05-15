@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bxhjh00lqxlnv"]
+[gd_scene load_steps=18 format=3 uid="uid://bxhjh00lqxlnv"]
 
 [ext_resource type="PackedScene" uid="uid://bffmd8v2aatj" path="res://Scenes/MainScene/player.tscn" id="1_0v76o"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Game.gd" id="1_5rsoo"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scenes/MainScene/DisplayHP.gd" id="5_i1t1g"]
 [ext_resource type="Script" path="res://Scenes/MainScene/DisplayScore.gd" id="6_4n6hb"]
 [ext_resource type="Texture2D" uid="uid://cpjn0s8enagpg" path="res://Assets/HP.png" id="6_i8dvb"]
+[ext_resource type="PackedScene" uid="uid://hxv8ns0db8i0" path="res://Scenes/MainScene/vel.tscn" id="6_uldu1"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Background.gd" id="8_p2q4e"]
 [ext_resource type="Texture2D" uid="uid://dogyvl4glwhi8" path="res://Assets/BG test.jpg" id="9_w7vak"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Camera.gd" id="11_xfkbu"]
@@ -33,6 +34,9 @@ position = Vector2(2352, 485)
 
 [node name="Meteor" parent="." instance=ExtResource("5_gau26")]
 position = Vector2(842, -72)
+
+[node name="Vel" parent="." instance=ExtResource("6_uldu1")]
+position = Vector2(2294, 253)
 
 [node name="HealthPickUp" parent="." instance=ExtResource("12_upobf")]
 position = Vector2(1341, 652)

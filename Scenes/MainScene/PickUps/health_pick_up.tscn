@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cv5hbyud3qm6d" path="res://Assets/PickUps/Upgrades/HealthPickUp.png" id="1_kpubu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tl7k4"]
-radius = 6.06426
+radius = 2.75411
 
 [sub_resource type="Animation" id="Animation_8xm01"]
 resource_name = "AufundAb"
@@ -44,14 +44,14 @@ _data = {
 script = ExtResource("1_d2gn8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3.98845)
+position = Vector2(0, -9.00747)
 scale = Vector2(10.555, 10.555)
 shape = SubResource("CircleShape2D_tl7k4")
 one_way_collision_margin = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -3.98845)
-scale = Vector2(0.675, 0.675)
+position = Vector2(0, -9.00747)
+scale = Vector2(0.35, 0.35)
 texture = ExtResource("1_kpubu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

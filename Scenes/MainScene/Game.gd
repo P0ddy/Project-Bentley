@@ -4,6 +4,7 @@ extends Node2D
 var Enemy = preload("res://Scenes/MainScene/enemy.tscn")
 var Boss = preload("res://Scenes/MainScene/boss.tscn")
 var Meteor = preload("res://Scenes/MainScene/meteor.tscn")
+var Vel = preload("res://Scenes/MainScene/vel.tscn")
 
 func _on_spawn_timer_timeout():
 	var enemy = Enemy.instantiate()
@@ -12,6 +13,9 @@ func _on_spawn_timer_timeout():
 	var meteor = Meteor.instantiate()
 	meteor.position = Vector2(randf_range(0, 1920), randf_range(0, 0))
 	add_child(meteor)
+	var vel = Vel.instantiate()
+	vel.position = Vector2(randf_range(2000, 3000), randf_range(50, 1030))
+	add_child(vel)
 
 
 # Options Scipt

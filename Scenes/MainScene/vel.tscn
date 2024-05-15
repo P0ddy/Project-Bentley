@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://hxv8ns0db8i0"]
+
+[ext_resource type="Script" path="res://Scenes/MainScene/vel.gd" id="1_54vkx"]
+[ext_resource type="Texture2D" uid="uid://cfdmnapwn8l3t" path="res://Assets/Enemy's/Robot-Sheet.png" id="1_h2w8g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r16eg"]
+size = Vector2(15, 11.3333)
+
+[node name="Vel" type="CharacterBody2D"]
+script = ExtResource("1_54vkx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-35.5, -7)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_r16eg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_h2w8g")
+region_enabled = true
+region_rect = Rect2(0, 0, 41, 17)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.90735e-06, -6)
+scale = Vector2(6.2, 2)
+
+[node name="DamageArea2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DamageArea2D"]
+position = Vector2(-39.385, 0)
+polygon = PackedVector2Array(27.385, -27, 27.385, 0, 43.385, -3, 78.385, -9, 102.385, -9, 102.385, 3, 72.385, 2, 64.385, 12, 79.385, 20, 79.385, 27, 71.385, 26, 50.385, 15, 43.385, 19, 33.385, 19, 23.385, 12, -14.615, 12, -21.615, 10, -21.615, -27)
+
+[connection signal="body_entered" from="DamageArea2D" to="." method="_on_damage_area_2d_body_entered"]
