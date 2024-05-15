@@ -7,7 +7,7 @@
 size = Vector2(378.5, 323)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0q1px"]
-radius = 564.0
+radius = 606.0
 height = 2298.0
 
 [node name="Boss" type="CharacterBody2D"]
