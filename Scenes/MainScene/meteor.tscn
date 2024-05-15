@@ -28,7 +28,7 @@ shape = SubResource("CircleShape2D_y1tup")
 scale = Vector2(3.405, 3.405)
 texture = ExtResource("2_vvf5e")
 region_enabled = true
-region_rect = Rect2(129.323, 0.0548306, 30.5395, 32.0259)
+region_rect = Rect2(127.431, -10.8907, 31.8908, 65.1329)
 script = ExtResource("3_bvte5")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
@@ -38,6 +38,7 @@ scale = Vector2(4.4, 4.65)
 [node name="DamageArea" type="Area2D" parent="."]
 
 [node name="DamageShape" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(2, -3)
 scale = Vector2(4.93, 4.93)
 shape = SubResource("CircleShape2D_qv4ys")
 
