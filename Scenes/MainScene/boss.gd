@@ -73,3 +73,8 @@ func enemy_hit():
 		Global.score += 80
 		Bossdeath.emit()
 		queue_free()
+
+
+func _on_damage_area_body_entered(body):
+	if body.has_method("player_hit"):
+		body.player_hit()
