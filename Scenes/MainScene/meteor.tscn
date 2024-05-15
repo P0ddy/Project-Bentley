@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ft25ecra3w7y"]
+[gd_scene load_steps=6 format=3 uid="uid://ft25ecra3w7y"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/meteor.gd" id="1_otrwl"]
-[ext_resource type="Texture2D" uid="uid://bvpc1e5leh1tf" path="res://Assets/Asteroid-Sheet_Big.png" id="1_pyb0n"]
+[ext_resource type="Texture2D" uid="uid://bvpc1e5leh1tf" path="res://Assets/Enemy's/Asteroid-Sheet_Big.png" id="2_0jyhn"]
+[ext_resource type="Script" path="res://Scenes/MainScene/Sprite2D.gd" id="3_bvte5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y1tup"]
 radius = 45.0444
@@ -16,9 +17,10 @@ shape = SubResource("CircleShape2D_y1tup")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_pyb0n")
+texture = ExtResource("2_0jyhn")
 region_enabled = true
-region_rect = Rect2(58, 58, 187, 202)
+region_rect = Rect2(1290.72, -1.21167, 310.023, 320.653)
+script = ExtResource("3_bvte5")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(2, 0.499998)
