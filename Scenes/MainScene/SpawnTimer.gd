@@ -1,7 +1,7 @@
 extends Timer
 
 var mintime = 2
-var maxtime = 5
+var maxtime = 6
 
 func _ready():
 	spawntime()

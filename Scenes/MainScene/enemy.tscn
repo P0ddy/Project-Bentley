@@ -100,7 +100,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gxtkg"]
-radius = 752.017
+radius = 799.01
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_p2645"]
 streams_count = 2
@@ -142,7 +142,7 @@ region_enabled = true
 region_rect = Rect2(18, 4, 154, 153)
 
 [node name="ShootSpeed" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 4.0
 autostart = true
 
 [node name="Detection" type="Area2D" parent="."]

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ur4lqhfpo1ys" path="res://Assets/Bullets/AlienBullet.png" id="2_suw6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hk6pr"]
-size = Vector2(30, 9)
+size = Vector2(56, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8boji"]
 atlas = ExtResource("2_suw6a")
@@ -39,12 +39,12 @@ animations = [{
 script = ExtResource("1_hj32a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(-4, 4)
 shape = SubResource("RectangleShape2D_hk6pr")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 0.512707, 0.494029, 1)
-scale = Vector2(5, 5)
+scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_8pvj1")
 animation = &"Idle"
 autoplay = "Idle"

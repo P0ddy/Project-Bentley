@@ -11,7 +11,7 @@ func _on_spawn_timer_timeout():
 	enemy.position = Vector2(randf_range(2000, 3000), randf_range(0, 1000))
 	add_child(enemy)
 	var meteor = Meteor.instantiate()
-	meteor.position = Vector2(randf_range(0, 1920), randf_range(0, 0))
+	meteor.position = Vector2(randf_range(0, 1920), randf_range(-50, -50))
 	add_child(meteor)
 	var vel = Vel.instantiate()
 	vel.position = Vector2(randf_range(2000, 3000), randf_range(50, 1030))
@@ -32,7 +32,7 @@ func _unhandled_input(event) -> void:
 func _on_bosstimer_timeout():
 	$SpawnTimer.stop()
 	var boss = Boss.instantiate()
-	boss.position = Vector2(randf_range(2100, 3100), randf_range(320, 320))
+	boss.position = Vector2(randf_range(2000, 2000), randf_range(500, 500))
 	add_child(boss)
 	boss.Bossdeath.connect(on_boss_death)
 	$Bosstimer.stop()

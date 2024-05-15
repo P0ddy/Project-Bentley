@@ -1,21 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://hcj4mcj1txo5"]
 
-[ext_resource type="Texture2D" uid="uid://b6jicbxm8phcc" path="res://Assets/kreis.png" id="1_8w1nm"]
 [ext_resource type="Script" path="res://Scenes/MainScene/boss_bullet.gd" id="1_vr5g6"]
+[ext_resource type="Texture2D" uid="uid://bx5a1c85n3e5k" path="res://Assets/Missile-Sheet.png" id="2_obwdq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kgum"]
-size = Vector2(28, 24)
+size = Vector2(41, 19)
 
 [node name="BossBullet" type="Area2D"]
 script = ExtResource("1_vr5g6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.902382, 0.0803209, 0, 1)
 position = Vector2(-7.15256e-07, -7.15256e-07)
 scale = Vector2(2.41667, 2.41667)
-texture = ExtResource("1_8w1nm")
+texture = ExtResource("2_obwdq")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(7, 2, 25, 11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.5, 0.5)
 shape = SubResource("RectangleShape2D_0kgum")
 
 [node name="Despawntimer" type="Timer" parent="."]

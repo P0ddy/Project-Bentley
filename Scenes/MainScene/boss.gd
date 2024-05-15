@@ -5,8 +5,8 @@ var Bullet = preload("res://Scenes/MainScene/boss_bullet.tscn")
 var canshoot = false
 var player = null
 
-var speed = 2
-var Health = 10
+var speed = 3
+var Health = 75
 
 var is_travelling = false  # Umbenannt von 'travel'
 
@@ -70,6 +70,6 @@ func enemy_hit():
 	Health -= 1
 	if Health == 0:
 		Global.camera.screen_shake(25, 25, 0.1)
-		Global.score += 100
+		Global.score += 80
 		Bossdeath.emit()
 		queue_free()

@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://c3ec2ibjn5xf4" path="res://Audio/SFX/Player/WeaponSounds/Laser_Shoot_Mix2.wav" id="12_l3slp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5niuo"]
-size = Vector2(388, 119)
+size = Vector2(377, 119)
 
 [sub_resource type="Animation" id="Animation_twe1a"]
 resource_name = "MuzzleFlash"
@@ -139,7 +139,7 @@ hframes = 8
 script = ExtResource("5_de3sp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, 43.5)
+position = Vector2(0.5, 43.5)
 shape = SubResource("RectangleShape2D_5niuo")
 
 [node name="SpawnPosition" type="Marker2D" parent="."]

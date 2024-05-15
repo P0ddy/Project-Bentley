@@ -48,7 +48,7 @@ script = ExtResource("4_lndq8")
 autostart = true
 
 [node name="Bosstimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 25.0
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
