@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dndrf4iwkj08p"
-path="res://.godot/imported/Car1-driving-HIT-FEEDBACK-Sheet.png-4d7c90f3f910c8431e42a473d9971b80.ctex"
+uid="uid://crvnovaud4ty4"
+path="res://.godot/imported/BusFlame.png-0c8e8bfdcefe85d70f630ecd2093a993.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cars/StandardCar/Car1-driving-HIT-FEEDBACK-Sheet.png"
-dest_files=["res://.godot/imported/Car1-driving-HIT-FEEDBACK-Sheet.png-4d7c90f3f910c8431e42a473d9971b80.ctex"]
+source_file="res://Assets/Cars/Bus/BusFlame.png"
+dest_files=["res://.godot/imported/BusFlame.png-0c8e8bfdcefe85d70f630ecd2093a993.ctex"]
 
 [params]
 
