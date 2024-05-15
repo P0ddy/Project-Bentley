@@ -1,13 +1,63 @@
-[gd_scene load_steps=31 format=3 uid="uid://bffmd8v2aatj"]
+[gd_scene load_steps=45 format=3 uid="uid://bffmd8v2aatj"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/player.gd" id="1_u2hrs"]
 [ext_resource type="Texture2D" uid="uid://bqroux18ckpri" path="res://Assets/Cars/StandardCar/Car1-driving-idle-Shee-WITHOUT-FLAMEt.png" id="2_acln5"]
+[ext_resource type="Texture2D" uid="uid://bdfg71glqval6" path="res://Assets/Cars/Bus/Bus.png" id="2_frm7s"]
+[ext_resource type="Texture2D" uid="uid://bxyor0ng5lemc" path="res://Assets/Cars/Ferrari/Ferrari.png" id="3_8poxs"]
 [ext_resource type="Texture2D" uid="uid://0y15fyppumw6" path="res://Assets/muzzle3.png" id="3_fca2x"]
 [ext_resource type="Texture2D" uid="uid://dp0lapmy514bb" path="res://Assets/Cars/StandardCar/Car1-driving-idle-Sheet-FLAME-ONLY.png" id="3_rrcaj"]
 [ext_resource type="AudioStream" uid="uid://cp5bf2vyxjs8q" path="res://Audio/SFX/Player/GetDamage.wav" id="5_t36ud"]
 [ext_resource type="AudioStream" uid="uid://y5jlyno31mtq" path="res://Audio/SFX/Player/WeaponSounds/Laser_Shoot_Mix.wav" id="10_vibwc"]
 [ext_resource type="AudioStream" uid="uid://c0deer8q1sla5" path="res://Audio/SFX/Player/WeaponSounds/Laser_Shoot_Mix3.wav" id="11_6j32e"]
 [ext_resource type="AudioStream" uid="uid://c3ec2ibjn5xf4" path="res://Audio/SFX/Player/WeaponSounds/Laser_Shoot_Mix2.wav" id="12_l3slp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkof2"]
+atlas = ExtResource("2_frm7s")
+region = Rect2(0, 0, 83, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8ar2"]
+atlas = ExtResource("2_frm7s")
+region = Rect2(83, 0, 83, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wf7kt"]
+atlas = ExtResource("2_frm7s")
+region = Rect2(166, 0, 83, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sx6k"]
+atlas = ExtResource("2_frm7s")
+region = Rect2(249, 0, 83, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab4aa"]
+atlas = ExtResource("2_frm7s")
+region = Rect2(332, 0, 83, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h007r"]
+atlas = ExtResource("2_frm7s")
+region = Rect2(415, 0, 83, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfp2k"]
+atlas = ExtResource("2_frm7s")
+region = Rect2(498, 0, 83, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln1n3"]
+atlas = ExtResource("2_frm7s")
+region = Rect2(581, 0, 83, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlwth"]
+atlas = ExtResource("3_8poxs")
+region = Rect2(0, 0, 80, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ya80"]
+atlas = ExtResource("3_8poxs")
+region = Rect2(80, 0, 80, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tat3"]
+atlas = ExtResource("3_8poxs")
+region = Rect2(160, 0, 80, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcump"]
+atlas = ExtResource("3_8poxs")
+region = Rect2(240, 0, 80, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fidsd"]
 atlas = ExtResource("2_acln5")
@@ -45,6 +95,52 @@ region = Rect2(518, 0, 74, 14)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_mkof2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8ar2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wf7kt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sx6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab4aa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h007r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfp2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln1n3")
+}],
+"loop": true,
+"name": &"Bus_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlwth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ya80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tat3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcump")
+}],
+"loop": true,
+"name": &"Ferrari_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fidsd")
 }, {
 "duration": 1.0,
@@ -69,7 +165,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_1nikb")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"Karre_idle",
 "speed": 5.0
 }]
 
@@ -192,8 +288,8 @@ script = ExtResource("1_u2hrs")
 position = Vector2(-209, 37)
 scale = Vector2(10.75, 10.75)
 sprite_frames = SubResource("SpriteFrames_6cuff")
-animation = &"Idle"
-autoplay = "Idle"
+animation = &"Bus_Idle"
+autoplay = "Ferrari_Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 43.5)

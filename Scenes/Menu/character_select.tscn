@@ -209,3 +209,4 @@ text = "Select"
 [connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
 [connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_ferrari_pressed"]
