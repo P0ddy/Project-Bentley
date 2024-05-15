@@ -6,12 +6,14 @@ var canshoot = false
 var player = null
 
 var speed = 2
-var Health = 100
+var Health = 10
 
 var is_travelling = false  # Umbenannt von 'travel'
 
 var startpos = 0
 var distance = 200
+
+signal Bossdeath
 
 @onready var spawnpos1 = $Spawnpos1
 @onready var spawnpos2 = $Spawnpos2
@@ -69,4 +71,5 @@ func enemy_hit():
 	if Health == 0:
 		Global.camera.screen_shake(25, 25, 0.1)
 		Global.score += 100
+		Bossdeath.emit()
 		queue_free()

@@ -30,8 +30,9 @@ func _on_bosstimer_timeout():
 	var boss = Boss.instantiate()
 	boss.position = Vector2(randf_range(2100, 3100), randf_range(320, 320))
 	add_child(boss)
+	boss.Bossdeath.connect(on_boss_death)
 	$Bosstimer.stop()
 
-
-	
-	
+func on_boss_death():
+	$SpawnTimer.start()
+	$Bosstimer.start()
