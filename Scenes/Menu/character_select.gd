@@ -15,15 +15,18 @@ func _process(delta):
 		
 
 func _on_left_button_pressed():
+	AudioPlayer.button_click()
 	if Global.PlayerSelect > 0:
 		Global.PlayerSelect -=1
 
 
 func _on_right_button_pressed():
+	AudioPlayer.button_click()
 	if Global.PlayerSelect < 2:
 		Global.PlayerSelect +=1
 
 
 
 func _on_select_button_pressed():
+	AudioPlayer.button_click()
 	get_tree().change_scene_to_file("res://Scenes/MainScene/Game.tscn")
