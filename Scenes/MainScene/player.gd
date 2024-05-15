@@ -9,8 +9,8 @@ var canshoot = true
 @onready var GetDamageSound = $GetDamage
 @onready var ShootingSound = $ShootingSound
 
-const ACCELERATION = 2000
-const FRICTION = 1000
+const ACCELERATION = 2800
+const FRICTION = 1300
 const MAX_SPEED = 450
 
 var health = 3

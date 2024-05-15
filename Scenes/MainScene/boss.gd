@@ -6,7 +6,7 @@ var canshoot = false
 var player = null
 
 var speed = 3
-var Health = 55
+var Health = 50
 
 var is_travelling = false  # Umbenannt von 'travel'
 
