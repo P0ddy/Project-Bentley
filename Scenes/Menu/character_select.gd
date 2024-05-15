@@ -3,11 +3,11 @@ extends Node2D
 
 func _process(delta):
 	match Global.PlayerSelect:
-		1:
+		0:
 			get_node("PlayerSelect").play("Player1")
-		2:
+		1:
 			get_node("PlayerSelect").play("Player2")
-		3:
+		2:
 			get_node("PlayerSelect").play("Player3")
 
 func _on_left_button_pressed():
@@ -16,5 +16,5 @@ func _on_left_button_pressed():
 
 
 func _on_right_button_pressed():
-	if Global.PlayerSelect < 3:
+	if Global.PlayerSelect < 2:
 		Global.PlayerSelect +=1
