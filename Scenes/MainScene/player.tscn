@@ -59,7 +59,7 @@ stream_2/weight = 1.0
 
 [sub_resource type="Animation" id="Animation_kfemg"]
 resource_name = "FlameIdle"
-length = 0.8021
+length = 0.6671
 loop_mode = 1
 step = 0.0983526
 tracks/0/type = "value"
@@ -69,10 +69,10 @@ tracks/0/path = NodePath("../FlameSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0983526, 0.196705, 0.295058, 0.39341, 0.491763, 0.590116, 0.688468),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0983526, 0.196705, 0.295058, 0.39341, 0.491763, 0.590116),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
+"values": [0, 1, 2, 3, 4, 5, 6]
 }
 
 [sub_resource type="Animation" id="Animation_k2i5w"]
@@ -149,7 +149,6 @@ position = Vector2(184, 11)
 wait_time = 0.25
 
 [node name="MuzzleFlash" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(187, 10)
 rotation = 0.785398
 scale = Vector2(0.467437, 0.454693)
@@ -181,6 +180,13 @@ bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite")
+libraries = {
+"": SubResource("AnimationLibrary_qnx04")
+}
+autoplay = "Idle"
+
+[node name="Flame" type="AnimationPlayer" parent="."]
+root_node = NodePath("../FlameSprite")
 libraries = {
 "": SubResource("AnimationLibrary_qnx04")
 }
