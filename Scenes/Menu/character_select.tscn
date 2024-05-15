@@ -172,7 +172,7 @@ offset_right = 1928.0
 offset_bottom = 1085.0
 
 [node name="PlayerSelect" type="AnimatedSprite2D" parent="."]
-position = Vector2(815, 526)
+position = Vector2(771, 527)
 scale = Vector2(10.75, 10.75)
 sprite_frames = SubResource("SpriteFrames_7dl6s")
 animation = &"Player3"
@@ -192,5 +192,20 @@ offset_right = 1448.0
 offset_bottom = 565.0
 text = "Right"
 
+[node name="Selected Car" type="Label" parent="."]
+offset_left = 841.0
+offset_top = 329.0
+offset_right = 1071.0
+offset_bottom = 396.0
+theme_override_font_sizes/font_size = 76
+
+[node name="SelectButton" type="Button" parent="."]
+offset_left = 852.0
+offset_top = 652.0
+offset_right = 1056.0
+offset_bottom = 727.0
+text = "Select"
+
 [connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]
