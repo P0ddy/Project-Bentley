@@ -213,7 +213,7 @@ offset_right = 674.9
 offset_bottom = 567.0
 theme_override_fonts/font = ExtResource("5_mevfi")
 theme_override_font_sizes/font_size = 45
-text = "Previous"
+text = "<--"
 
 [node name="RightButton" type="Button" parent="."]
 offset_left = 1252.0
@@ -222,7 +222,7 @@ offset_right = 1502.0
 offset_bottom = 567.0
 theme_override_fonts/font = ExtResource("5_mevfi")
 theme_override_font_sizes/font_size = 45
-text = "Next"
+text = "-->"
 
 [node name="Selected Car" type="Label" parent="."]
 offset_left = 414.0
@@ -245,5 +245,5 @@ text = "Select"
 
 [connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
-[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]
 [connection signal="pressed" from="SelectButton" to="." method="_on_ferrari_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]

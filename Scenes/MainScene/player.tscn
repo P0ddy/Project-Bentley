@@ -149,6 +149,7 @@ position = Vector2(184, 11)
 wait_time = 0.25
 
 [node name="MuzzleFlash" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(187, 10)
 rotation = 0.785398
 scale = Vector2(0.467437, 0.454693)
