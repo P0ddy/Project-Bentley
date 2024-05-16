@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqejua776p4aa"]
+[gd_scene load_steps=5 format=3 uid="uid://cqejua776p4aa"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/boss.gd" id="1_h6xpb"]
 [ext_resource type="Texture2D" uid="uid://ca0bv4pow8pp7" path="res://Assets/Enemy's/Boss.png" id="2_yaxvk"]
@@ -8,10 +8,7 @@ radius = 810.0
 height = 2298.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6c1f"]
-size = Vector2(399, 340)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpjg4"]
-size = Vector2(378.5, 323)
+size = Vector2(486, 253)
 
 [node name="Boss" type="CharacterBody2D"]
 collision_layer = 2
@@ -19,20 +16,20 @@ collision_mask = 2
 script = ExtResource("1_h6xpb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(107.39, 0)
 texture = ExtResource("2_yaxvk")
 region_rect = Rect2(0, 0, 29, 16)
 
 [node name="Spawnpos1" type="Marker2D" parent="."]
-position = Vector2(-133, -160)
+position = Vector2(14, -261)
 
 [node name="Spawnpos2" type="Marker2D" parent="."]
-position = Vector2(-119, 156)
+position = Vector2(-59, 149)
 
 [node name="shootspeed" type="Timer" parent="."]
 autostart = true
 
 [node name="Detection" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
 shape = SubResource("CapsuleShape2D_0q1px")
@@ -40,13 +37,13 @@ shape = SubResource("CapsuleShape2D_0q1px")
 [node name="DamageArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
-position = Vector2(8.5, 2)
+position = Vector2(-35, 23.5)
 shape = SubResource("RectangleShape2D_h6c1f")
 debug_color = Color(0.708356, 0, 0.224237, 0.42)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8.75, 0)
-shape = SubResource("RectangleShape2D_hpjg4")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(8.75, -22.155)
+polygon = PackedVector2Array(-269.75, -33.845, -268.75, 117.155, -95.75, 118.155, -95.75, 201.155, 250.25, 202.155, 242.25, -206.845, 119.25, -251.845, -49.75, -226.845, -92.75, -31.845)
 
 [connection signal="timeout" from="shootspeed" to="." method="_on_shootspeed_timeout"]
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
