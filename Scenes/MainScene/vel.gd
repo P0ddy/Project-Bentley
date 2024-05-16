@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const NAME = "Vel"
+
 var Explosion = preload("res://Scenes/MainScene/explosion.tscn")
 
 @export var minspeed = 225

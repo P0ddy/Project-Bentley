@@ -88,7 +88,7 @@ func knockback():
 	move_and_slide()
 
 func _on_area_2d_body_entered(body):
-	if body.get("NAME") == "meteor":
+	if body.get("NAME") == "meteor" or body.get ("NAME") == "Vel":
 		knockback()
 
 
