@@ -63,7 +63,7 @@ func enemy_hit():
 		queue_free()
 
 func spawn_healthpickup():
-	if randf() <= 0.3:
+	if randf() <= 0.9:
 		var healthinstance = preload("res://Scenes/MainScene/PickUps/health_pick_up.tscn").instantiate()
-		get_tree().root.add_child(healthinstance)
+		Global.game.add_child(healthinstance)
 		healthinstance.global_position = global_position
