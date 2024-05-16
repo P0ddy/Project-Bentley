@@ -30,6 +30,8 @@ func _on_shoot_speed_timeout():
 	canshoot = true
 	if player != null:
 		shoot()
+		$"Shooting Sound".play()
+	
 
 func shoot():
 	if canshoot:
