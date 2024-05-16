@@ -242,8 +242,9 @@ frame_progress = 0.197479
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_muf11")
-volume_db = -4.099
+volume_db = -5.022
 pitch_scale = 1.86
+bus = &"SFX"
 
 [node name="ShotSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_fslmm")

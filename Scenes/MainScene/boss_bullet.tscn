@@ -1,7 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://hcj4mcj1txo5"]
+[gd_scene load_steps=16 format=3 uid="uid://hcj4mcj1txo5"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/boss_bullet.gd" id="1_vr5g6"]
 [ext_resource type="Texture2D" uid="uid://bx5a1c85n3e5k" path="res://Assets/Bullets/Missile-Sheet.png" id="2_j86ep"]
+[ext_resource type="Texture2D" uid="uid://x6obsm1cm100" path="res://Assets/Bullets/Boss_Attack-Sheet.png" id="2_k7seq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4svs"]
+atlas = ExtResource("2_k7seq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vie0q"]
+atlas = ExtResource("2_k7seq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oumx8"]
+atlas = ExtResource("2_k7seq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyjxw"]
+atlas = ExtResource("2_k7seq")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rg16d"]
 atlas = ExtResource("2_j86ep")
@@ -29,6 +46,23 @@ region = Rect2(160, 0, 32, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dvnv5"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4svs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vie0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oumx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyjxw")
+}],
+"loop": true,
+"name": &"Idle 2",
+"speed": 9.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rg16d")
@@ -63,10 +97,9 @@ script = ExtResource("1_vr5g6")
 position = Vector2(-7.15256e-07, -7.15256e-07)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_dvnv5")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.9112
-flip_h = true
+animation = &"Idle 2"
+autoplay = "Idle 2"
+frame_progress = 0.348055
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-14, 0)
