@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cfksfks3n23hx"]
+[gd_scene load_steps=40 format=3 uid="uid://cfksfks3n23hx"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/character_select.gd" id="1_k3yhq"]
 [ext_resource type="Texture2D" uid="uid://bdfg71glqval6" path="res://Assets/Cars/Bus/Bus.png" id="2_sbnsk"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b28hlk1dj68up" path="res://Assets/UI/Arrowleftt.png" id="7_hsolj"]
 [ext_resource type="Texture2D" uid="uid://bb1fct2q057ga" path="res://Assets/UI/Arrowrightred.png" id="8_pxy46"]
 [ext_resource type="Texture2D" uid="uid://bxd86t2rg8uym" path="res://Assets/UI/Arrowright.png" id="9_8t64y"]
+[ext_resource type="Texture2D" uid="uid://de8ff850uwujb" path="res://Assets/UI/BackGround/Background.png" id="10_r75h5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fyimi"]
 atlas = ExtResource("3_4upjr")
@@ -248,20 +249,20 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_rg5w0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_opl5o")
 
 [node name="Selected Car" type="Label" parent="."]
-offset_left = 414.0
-offset_top = 187.0
-offset_right = 1498.0
-offset_bottom = 385.0
+offset_left = 417.762
+offset_top = 187.241
+offset_right = 1501.76
+offset_bottom = 385.241
 theme_override_fonts/font = ExtResource("5_mevfi")
 theme_override_font_sizes/font_size = 130
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SelectButton" type="Button" parent="."]
-offset_left = 852.0
-offset_top = 652.0
-offset_right = 1102.0
-offset_bottom = 722.0
+offset_left = 802.464
+offset_top = 642.826
+offset_right = 1052.46
+offset_bottom = 712.826
 scale = Vector2(1.00278, 1)
 focus_neighbor_left = NodePath("../LeftButton")
 focus_neighbor_top = NodePath("../LeftButton")
@@ -269,6 +270,13 @@ focus_neighbor_right = NodePath("../RightButton")
 theme_override_fonts/font = ExtResource("5_mevfi")
 theme_override_font_sizes/font_size = 45
 text = "Select"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(9.53674e-07, -2.00258)
+scale = Vector2(1.00274, 1.00314)
+texture = ExtResource("10_r75h5")
+offset = Vector2(960, 540)
 
 [connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]

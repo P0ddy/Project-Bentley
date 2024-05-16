@@ -78,10 +78,10 @@ text = "Main Menu"
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 623.0
-offset_right = -1202.0
-offset_bottom = -307.0
+offset_left = 15.0
+offset_top = 720.0
+offset_right = -1189.0
+offset_bottom = -210.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(-1109, -407)
@@ -110,12 +110,13 @@ size_flags_horizontal = 6
 focus_neighbor_right = NodePath("../../../MarginContainer/VBoxContainer/ContinueButton")
 
 [node name="Sliders" type="VBoxContainer" parent="CanvasLayer"]
-offset_left = 1389.0
-offset_top = 229.0
-offset_right = 1738.0
-offset_bottom = 1055.0
+offset_left = 1368.0
+offset_top = 398.0
+offset_right = 1717.0
+offset_bottom = 1034.0
 size_flags_horizontal = 4
-theme_override_constants/separation = 38
+theme_override_constants/separation = 0
+alignment = 1
 
 [node name="MasterVoume" type="Label" parent="CanvasLayer/Sliders"]
 layout_mode = 2
@@ -125,6 +126,7 @@ theme_override_fonts/font = ExtResource("2_hi8ig")
 theme_override_font_sizes/font_size = 87
 text = "Volume
 "
+horizontal_alignment = 1
 
 [node name="VolumeSlider" parent="CanvasLayer/Sliders" instance=ExtResource("3_j7qbm")]
 layout_mode = 2
@@ -142,6 +144,7 @@ theme_override_fonts/font = ExtResource("2_hi8ig")
 theme_override_font_sizes/font_size = 87
 text = "Music
 "
+horizontal_alignment = 1
 
 [node name="VolumeSlider2" parent="CanvasLayer/Sliders" instance=ExtResource("3_j7qbm")]
 layout_mode = 2
@@ -159,6 +162,7 @@ theme_override_constants/outline_size = 40
 theme_override_fonts/font = ExtResource("2_hi8ig")
 theme_override_font_sizes/font_size = 87
 text = "SFX"
+horizontal_alignment = 1
 
 [node name="VolumeSlider3" parent="CanvasLayer/Sliders" instance=ExtResource("3_j7qbm")]
 layout_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8am4x888k45p"]
+[gd_scene load_steps=10 format=3 uid="uid://b8am4x888k45p"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/main_menu.gd" id="1_owfyi"]
 [ext_resource type="PackedScene" uid="uid://bxhjh00lqxlnv" path="res://Scenes/MainScene/Game.tscn" id="2_ww1lw"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://7de6ck7s52l4" path="res://Assets/UI/Logo.png" id="4_5ck7u"]
 [ext_resource type="Texture2D" uid="uid://6a826vbv5awm" path="res://Assets/UI/Button.png" id="4_pi5rh"]
 [ext_resource type="Texture2D" uid="uid://ch554c13oxwbc" path="res://Assets/UI/ButtonHovor.png" id="5_10y6g"]
+[ext_resource type="Texture2D" uid="uid://de8ff850uwujb" path="res://Assets/UI/BackGround/Background.png" id="7_ygb8g"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ru2uq"]
 texture = ExtResource("4_pi5rh")
@@ -30,7 +31,15 @@ position = Vector2(996, 262)
 scale = Vector2(1.765, 1.765)
 texture = ExtResource("4_5ck7u")
 
+[node name="Sprite2D" type="Sprite2D" parent="Logo"]
+z_index = -1
+position = Vector2(-564.306, -149.008)
+scale = Vector2(0.566867, 0.567097)
+texture = ExtResource("7_ygb8g")
+offset = Vector2(960, 540)
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

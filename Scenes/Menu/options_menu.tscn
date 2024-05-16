@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8gvpvs1dpvr2"]
+[gd_scene load_steps=11 format=3 uid="uid://c8gvpvs1dpvr2"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/options_menu.gd" id="1_paq8y"]
 [ext_resource type="PackedScene" uid="uid://bqemmj5sudlam" path="res://Scenes/Menu/volume_slider.tscn" id="2_3jgbx"]
 [ext_resource type="FontFile" uid="uid://f7mrciexqi7f" path="res://Assets/Fonts/SPACE RETRO.TTF" id="2_fwc4q"]
+[ext_resource type="Texture2D" uid="uid://de8ff850uwujb" path="res://Assets/UI/BackGround/Background.png" id="2_mjun8"]
 [ext_resource type="Texture2D" uid="uid://6a826vbv5awm" path="res://Assets/UI/Button.png" id="4_q3ibf"]
 [ext_resource type="Texture2D" uid="uid://ch554c13oxwbc" path="res://Assets/UI/ButtonHovor.png" id="5_io3bj"]
 [ext_resource type="Texture2D" uid="uid://cy5564mb2i30r" path="res://Assets/UI/SLiderIconPink.png" id="6_jjav5"]
@@ -25,6 +26,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_paq8y")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(9.53674e-07, -1)
+scale = Vector2(1.00052, 1.00136)
+texture = ExtResource("2_mjun8")
+offset = Vector2(960, 540)
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -32,7 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.553581, 0.261212, 0.428144, 1)
+color = Color(0.552941, 0.262745, 0.427451, 0)
 
 [node name="Mid Color" type="ColorRect" parent="."]
 layout_mode = 1
@@ -47,7 +55,7 @@ offset_right = 27.6
 offset_bottom = -35.8
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.307106, 0.503942, 0.531524, 1)
+color = Color(0.305882, 0.505882, 0.533333, 0)
 
 [node name="OptionsText" type="Label" parent="Mid Color"]
 layout_mode = 1

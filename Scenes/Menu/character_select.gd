@@ -11,13 +11,13 @@ func _process(delta):
 	match Global.PlayerSelect:
 		0:
 			get_node("PlayerSelect").play("Player1")
-			get_node("Selected Car").text = "Standard Karre"
+			get_node("Selected Car").text = "Neon"
 		1:
 			get_node("PlayerSelect").play("Player2")
-			get_node("Selected Car").text = "Ferrari"
+			get_node("Selected Car").text = "Blaze"
 		2:
 			get_node("PlayerSelect").play("Player3")
-			get_node("Selected Car").text = "Bus"
+			get_node("Selected Car").text = "Bully"
 		
 
 func _on_left_button_pressed():
