@@ -1,6 +1,10 @@
 extends Control
 
 
+func _ready():
+	$CenterContainer2/VBoxContainer/Restart.grab_focus()
+
+
 func _on_restart_pressed():
 	AudioPlayer.GameOverThemeStop()
 	AudioPlayer.button_click()
