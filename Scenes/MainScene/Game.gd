@@ -14,7 +14,7 @@ func _on_spawn_timer_timeout():
 	enemy.position = Vector2(randf_range(2000, 3000), randf_range(0, 1000))
 	add_child(enemy)
 	var meteor = Meteor.instantiate()
-	meteor.position = Vector2(randf_range(0, 1920), randf_range(-50, -50))
+	meteor.position = Vector2(randf_range(200, 1820), randf_range(-50, -50))
 	add_child(meteor)
 	var vel = Vel.instantiate()
 	vel.position = Vector2(randf_range(2000, 3000), randf_range(50, 1030))

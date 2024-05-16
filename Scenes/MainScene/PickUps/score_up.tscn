@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfikdwhltkcxu"]
+
+[ext_resource type="Script" path="res://Scenes/MainScene/PickUps/ScoreUp.gd" id="1_tbjsu"]
+[ext_resource type="Texture2D" uid="uid://ren48n1jnw5p" path="res://Assets/PickUps/Upgrades/ScoreUp.png" id="2_ldp4v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wrix0"]
+radius = 31.0
+
+[node name="ScoreUp" type="Area2D"]
+script = ExtResource("1_tbjsu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wrix0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.23176, 2.23176)
+texture = ExtResource("2_ldp4v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

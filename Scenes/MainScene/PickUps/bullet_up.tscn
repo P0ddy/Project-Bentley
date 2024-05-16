@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://5dmcdfjftye8"]
+
+[ext_resource type="Script" path="res://Scenes/MainScene/PickUps/bullet_up.gd" id="1_x3kla"]
+[ext_resource type="Texture2D" uid="uid://eodhnb2wm1we" path="res://Assets/PickUps/Upgrades/BulletPowerUp_Big.png" id="2_5rrhx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s7xgt"]
+radius = 31.0161
+
+[node name="BulletUp" type="Area2D"]
+script = ExtResource("1_x3kla")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s7xgt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.232481, 0.232481)
+texture = ExtResource("2_5rrhx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
