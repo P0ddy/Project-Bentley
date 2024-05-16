@@ -36,7 +36,7 @@ func enemy_hit():
 	$Sprite2D.modulate = Color.WHITE
 	$HitSound.play()
 	
-	if health == 0:
+	if health <= 0:
 		Global.camera.screen_shake(4, 4, 0.05)
 		Global.score += 3
 		spawn_scoreup()

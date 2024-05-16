@@ -75,7 +75,7 @@ func enemy_hit():
 	await get_tree().create_timer(0.1).timeout
 	$Sprite2D.modulate = Color.WHITE
 	$HitSound.play()
-	if Health == 0:
+	if Health <= 0:
 		Global.camera.screen_shake(25, 25, 0.1)
 		var explosion = Explosion.instantiate()
 		explosion.global_position = global_position

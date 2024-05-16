@@ -28,7 +28,7 @@ func enemy_hit():
 	await get_tree().create_timer(0.1).timeout
 	$Sprite2D.modulate = Color.WHITE
 	
-	if health == 0:
+	if health <= 0:
 		Global.camera.screen_shake(4, 4, 0.05)
 		Global.score += 5
 		spawn_bulletup()

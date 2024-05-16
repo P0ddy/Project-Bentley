@@ -50,7 +50,7 @@ func enemy_hit():
 	$AnimatedSprite2D.modulate = Color.WHITE
 	hit_sound.play()
 	
-	if health == 0:
+	if health <= 0:
 		Global.camera.screen_shake(10, 10, 0.05)
 		Global.score += 6
 		
