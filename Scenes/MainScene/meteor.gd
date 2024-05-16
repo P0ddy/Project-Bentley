@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+const NAME = "meteor"
 
 var Explosion = preload("res://Scenes/MainScene/explosion.tscn")
 

@@ -74,7 +74,7 @@ func player_hit():
 	$AnimatedSprite.modulate = Color.DARK_RED
 	await get_tree().create_timer(0.1).timeout
 	$AnimatedSprite.modulate = Color.WHITE
-	knockback()
+	
 	
 	
 	
@@ -83,8 +83,14 @@ func player_hit():
 		queue_free()
 		
 func knockback():
-	var KnockbackDirection = -velocity.normalized() * KnockbackPower
-	velocity = KnockbackDirection
+	var knockback_direction = -velocity.normalized() * KnockbackPower
+	velocity = knockback_direction
 	move_and_slide()
 
-		
+func _on_area_2d_body_entered(body):
+	if body.get("NAME") == "meteor":
+		knockback()
+
+
+
+

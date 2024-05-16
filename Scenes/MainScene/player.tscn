@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bffmd8v2aatj"]
+[gd_scene load_steps=20 format=3 uid="uid://bffmd8v2aatj"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/player.gd" id="1_u2hrs"]
 [ext_resource type="Texture2D" uid="uid://bqroux18ckpri" path="res://Assets/Cars/StandardCar/Car1-driving-idle-Shee-WITHOUT-FLAMEt.png" id="2_acln5"]
@@ -126,6 +126,9 @@ _data = {
 "RESET": SubResource("Animation_fm8th")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0wv2"]
+size = Vector2(35.4927, 12.0438)
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(338, 182)
 motion_mode = 1
@@ -193,4 +196,13 @@ libraries = {
 }
 autoplay = "FlameIdle"
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.5, 44)
+scale = Vector2(10.96, 10.96)
+shape = SubResource("RectangleShape2D_b0wv2")
+debug_color = Color(0.566718, 0.551702, 0.227914, 0.42)
+
 [connection signal="timeout" from="AttackSpeedTimer" to="." method="_on_attack_speed_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
