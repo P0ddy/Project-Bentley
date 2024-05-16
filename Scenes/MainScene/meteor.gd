@@ -39,13 +39,12 @@ func enemy_hit():
 	if health == 0:
 		Global.camera.screen_shake(4, 4, 0.05)
 		Global.score += 3
-		queue_free()
-		
-	if health == 0:
+		spawn_scoreup()
 		var explosion = Explosion.instantiate()
 		explosion.global_position = global_position
 		get_tree().current_scene.add_child(explosion)
 		AudioPlayer.Explosion()
+		queue_free()
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
@@ -54,3 +53,10 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 func _on_damage_area_body_entered(body):
 	if body.has_method("player_hit"):
 		body.player_hit()
+
+
+func spawn_scoreup():
+	if randf() <= 0.66:
+		var scoreupinstance = preload("res://Scenes/MainScene/PickUps/score_up.tscn").instantiate()
+		Global.game.add_child(scoreupinstance)
+		scoreupinstance.global_position = global_position
