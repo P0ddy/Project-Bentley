@@ -48,7 +48,7 @@ func _on_damage_area_2d_body_entered(body):
 	
 
 func spawn_bulletup():
-	if randf() <= 0.8:
+	if randf() <= 0.5:
 		var bulletupinstance = preload("res://Scenes/MainScene/PickUps/bullet_up.tscn").instantiate()
 		Global.game.add_child(bulletupinstance)
 		bulletupinstance.global_position = global_position
