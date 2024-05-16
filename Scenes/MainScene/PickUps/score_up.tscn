@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfikdwhltkcxu"]
+[gd_scene load_steps=13 format=3 uid="uid://ct2dndy0f4rla"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/PickUps/ScoreUp.gd" id="1_tbjsu"]
 [ext_resource type="Texture2D" uid="uid://ren48n1jnw5p" path="res://Assets/PickUps/Upgrades/ScoreUp.png" id="2_ldp4v"]
@@ -6,15 +6,80 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_wrix0"]
 radius = 31.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5so43"]
+atlas = ExtResource("2_ldp4v")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhuy8"]
+atlas = ExtResource("2_ldp4v")
+region = Rect2(24, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0dn4"]
+atlas = ExtResource("2_ldp4v")
+region = Rect2(48, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yghq3"]
+atlas = ExtResource("2_ldp4v")
+region = Rect2(72, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbcqu"]
+atlas = ExtResource("2_ldp4v")
+region = Rect2(96, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjpnn"]
+atlas = ExtResource("2_ldp4v")
+region = Rect2(120, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkdip"]
+atlas = ExtResource("2_ldp4v")
+region = Rect2(144, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6c60"]
+atlas = ExtResource("2_ldp4v")
+region = Rect2(168, 0, 24, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5i27j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5so43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhuy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0dn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yghq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbcqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjpnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkdip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6c60")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="ScoreUp" type="Area2D"]
 script = ExtResource("1_tbjsu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wrix0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2.23176, 2.23176)
-texture = ExtResource("2_ldp4v")
+sprite_frames = SubResource("SpriteFrames_5i27j")
+autoplay = "default"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
