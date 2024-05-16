@@ -51,16 +51,19 @@ func enemy_hit():
 	if health == 0:
 		Global.camera.screen_shake(10, 10, 0.05)
 		Global.score += 6
-		queue_free()
 		
-	if health == 0:
 		AudioPlayer.Explosion()
 		
-	if health == 0:
+		spawn_healthpickup()
+		
 		var explosion = Explosion.instantiate()
 		explosion.global_position = global_position
 		get_tree().current_scene.add_child(explosion)
 		
+		queue_free()
 
-
-
+func spawn_healthpickup():
+	if randf() <= 0.3:
+		var healthinstance = preload("res://Scenes/MainScene/PickUps/health_pick_up.tscn").instantiate()
+		get_tree().root.add_child(healthinstance)
+		healthinstance.global_position = global_position

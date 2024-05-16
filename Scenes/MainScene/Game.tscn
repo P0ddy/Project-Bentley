@@ -38,7 +38,7 @@ position = Vector2(842, -72)
 position = Vector2(2294, 253)
 
 [node name="HealthPickUp" parent="." instance=ExtResource("12_upobf")]
-position = Vector2(1341, 652)
+position = Vector2(1284, -150)
 
 [node name="SpawnTimer" type="Timer" parent="."]
 autostart = true
@@ -73,6 +73,8 @@ offset_top = 11.0
 offset_right = 378.0
 offset_bottom = 98.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.76662, 0.76662, 0.76662, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("10_827yf")
 theme_override_font_sizes/font_size = 60
 text = "3"
@@ -86,6 +88,8 @@ offset_top = 23.0
 offset_right = 1894.0
 offset_bottom = 92.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.808998, 0.808998, 0.808998, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("10_827yf")
 theme_override_font_sizes/font_size = 55
 text = "Score"
@@ -97,7 +101,9 @@ offset_left = 1728.0
 offset_top = 21.0
 offset_right = 2295.0
 offset_bottom = 97.0
-theme_override_colors/font_color = Color(0, 0, 0.643137, 1)
+theme_override_colors/font_color = Color(0, 0, 0.607843, 1)
+theme_override_colors/font_outline_color = Color(0.707967, 0.707967, 0.707967, 1)
+theme_override_constants/outline_size = 9
 theme_override_fonts/font = ExtResource("10_827yf")
 theme_override_font_sizes/font_size = 60
 text = "0"
