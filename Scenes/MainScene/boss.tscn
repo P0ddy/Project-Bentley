@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://cqejua776p4aa"]
+[gd_scene load_steps=34 format=3 uid="uid://cqejua776p4aa"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/boss.gd" id="1_h6xpb"]
 [ext_resource type="Texture2D" uid="uid://twinuy73fr7p" path="res://Assets/Enemy's/BossSheet.png" id="2_32wxd"]
 [ext_resource type="Texture2D" uid="uid://dyq34jicqoei4" path="res://Assets/Enemy's/Scorpisaur-Buster-Fire.png" id="3_i4sj4"]
 [ext_resource type="AudioStream" uid="uid://c4l6ib0lrgqdl" path="res://Audio/SFX/Enemy/movement/Bewegung_Mix2.wav" id="4_muf11"]
+[ext_resource type="AudioStream" uid="uid://i2boai41h378" path="res://Audio/SFX/Enemy/BossWeapon.wav" id="5_fslmm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vbs62"]
 atlas = ExtResource("2_32wxd")
@@ -205,7 +206,7 @@ script = ExtResource("1_h6xpb")
 sprite_frames = SubResource("SpriteFrames_aslfx")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.691422
+frame_progress = 0.488186
 
 [node name="Spawnpos1" type="Marker2D" parent="."]
 position = Vector2(14, -261)
@@ -237,12 +238,17 @@ polygon = PackedVector2Array(-269.75, -33.845, -268.75, 117.155, -95.75, 118.155
 sprite_frames = SubResource("SpriteFrames_bw2hp")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.200293
+frame_progress = 0.197479
 
 [node name="HitSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_muf11")
 volume_db = -4.099
 pitch_scale = 1.86
+
+[node name="ShotSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_fslmm")
+volume_db = -4.611
+bus = &"SFX"
 
 [connection signal="timeout" from="shootspeed" to="." method="_on_shootspeed_timeout"]
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]

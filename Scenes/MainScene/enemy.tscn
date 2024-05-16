@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://df2u7u7wedi5c"]
+[gd_scene load_steps=20 format=3 uid="uid://df2u7u7wedi5c"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/Enemy.gd" id="1_k3467"]
 [ext_resource type="Texture2D" uid="uid://dl1m1byu24q5n" path="res://Assets/Ufo-Idle-Sheet.png" id="2_3khfd"]
 [ext_resource type="Texture2D" uid="uid://0y15fyppumw6" path="res://Assets/muzzle3.png" id="3_7l023"]
 [ext_resource type="AudioStream" uid="uid://c4l6ib0lrgqdl" path="res://Audio/SFX/Enemy/movement/Bewegung_Mix2.wav" id="4_oirtt"]
+[ext_resource type="AudioStream" uid="uid://rt8spnm3luco" path="res://Audio/SFX/Enemy/AlienWeapon.wav" id="6_0adbg"]
 [ext_resource type="AudioStream" uid="uid://dh1gxt613u7q2" path="res://Audio/SFX/Enemy/movement/Bewegung_Mix.wav" id="7_ll8mq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sarjd"]
@@ -156,6 +157,9 @@ volume_db = 2.111
 bus = &"SFX"
 
 [node name="Shooting Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_0adbg")
+volume_db = -4.099
+bus = &"SFX"
 
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_shoot_speed_timeout"]
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
