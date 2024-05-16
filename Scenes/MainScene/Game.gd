@@ -6,6 +6,9 @@ var Boss = preload("res://Scenes/MainScene/boss.tscn")
 var Meteor = preload("res://Scenes/MainScene/meteor.tscn")
 var Vel = preload("res://Scenes/MainScene/vel.tscn")
 
+func _ready():
+	Global.game = self
+
 func _on_spawn_timer_timeout():
 	var enemy = Enemy.instantiate()
 	enemy.position = Vector2(randf_range(2000, 3000), randf_range(0, 1000))
