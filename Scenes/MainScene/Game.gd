@@ -25,8 +25,8 @@ func _on_spawn_timer_timeout():
 @export var pause_menu_packed_scene : PackedScene = null
 @onready var ui_container = $CanvasLayer as CanvasLayer
 
-func _unhandled_input(event) -> void:
-	if event.is_action("Pause"):
+func _process(delta):
+	if Input.is_action_just_pressed("Pause") and not get_tree().paused:
 		var new_pause_menu : PauseMenu = pause_menu_packed_scene.instantiate()
 		
 		ui_container.add_child(new_pause_menu)
