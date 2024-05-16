@@ -14,7 +14,7 @@
 [ext_resource type="FontFile" uid="uid://cdlpr8kvjg0jb" path="res://Assets/Fonts/EMULOGIC-ZREW.TTF" id="10_827yf"]
 [ext_resource type="Script" path="res://Scenes/MainScene/Camera.gd" id="11_xfkbu"]
 [ext_resource type="PackedScene" uid="uid://cuyb3s030kqqs" path="res://Scenes/MainScene/PickUps/health_pick_up.tscn" id="12_upobf"]
-[ext_resource type="Texture2D" uid="uid://06ljkvg0dv4a" path="res://Assets/UI/BackGround/Parallax_Background_A.png" id="14_ad0nw"]
+[ext_resource type="Texture2D" uid="uid://bksabsl3l668j" path="res://Assets/UI/BackGround/Parallax_Background V2.png" id="14_gfc2p"]
 [ext_resource type="Texture2D" uid="uid://b4tt5m0imjcf4" path="res://Assets/UI/BackGround/Parallax_Background_B.png" id="15_d1hq6"]
 [ext_resource type="Texture2D" uid="uid://g6n13kuw400b" path="res://Assets/UI/BackGround/Parallax_Background_C.png" id="16_r17fs"]
 [ext_resource type="Texture2D" uid="uid://di6mdlyjrhcv5" path="res://Assets/UI/BackGround/Parallax_Background_D.png" id="17_sbtxa"]
@@ -113,7 +113,7 @@ motion_mirroring = Vector2(3860, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxLayer"]
 position = Vector2(960, 540)
-texture = ExtResource("14_ad0nw")
+texture = ExtResource("14_gfc2p")
 offset = Vector2(970, 0)
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]

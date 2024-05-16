@@ -5,6 +5,9 @@ extends Control
 @export var main_game_packed_scene : PackedScene = null
 
 
+func _ready():
+	$StartButton.grab_focus()
+
 
 func _on_start_button_button_down():
 	AudioPlayer.button_click()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqejua776p4aa"]
 
-[ext_resource type="Texture2D" uid="uid://dl1m1byu24q5n" path="res://Assets/Ufo-Idle-Sheet.png" id="1_6vs40"]
 [ext_resource type="Script" path="res://Scenes/MainScene/boss.gd" id="1_h6xpb"]
+[ext_resource type="Texture2D" uid="uid://ca0bv4pow8pp7" path="res://Assets/Enemy's/Boss.png" id="2_yaxvk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0q1px"]
 radius = 810.0
@@ -14,13 +14,13 @@ size = Vector2(399, 340)
 size = Vector2(378.5, 323)
 
 [node name="Boss" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_h6xpb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(107.39, 0)
-scale = Vector2(20, 20)
-texture = ExtResource("1_6vs40")
-region_enabled = true
+texture = ExtResource("2_yaxvk")
 region_rect = Rect2(0, 0, 29, 16)
 
 [node name="Spawnpos1" type="Marker2D" parent="."]
