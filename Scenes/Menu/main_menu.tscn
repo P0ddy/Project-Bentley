@@ -1,16 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8am4x888k45p"]
+[gd_scene load_steps=9 format=3 uid="uid://b8am4x888k45p"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/main_menu.gd" id="1_owfyi"]
 [ext_resource type="PackedScene" uid="uid://bxhjh00lqxlnv" path="res://Scenes/MainScene/Game.tscn" id="2_ww1lw"]
 [ext_resource type="FontFile" uid="uid://f7mrciexqi7f" path="res://Assets/Fonts/SPACE RETRO.TTF" id="3_t2bbi"]
 [ext_resource type="Texture2D" uid="uid://7de6ck7s52l4" path="res://Assets/UI/Logo.png" id="4_5ck7u"]
-[ext_resource type="Texture2D" uid="uid://c8ute8asdjbfc" path="res://Assets/UI/UIButton.png" id="5_hojq6"]
+[ext_resource type="Texture2D" uid="uid://6a826vbv5awm" path="res://Assets/UI/Button.png" id="4_pi5rh"]
+[ext_resource type="Texture2D" uid="uid://ch554c13oxwbc" path="res://Assets/UI/ButtonHovor.png" id="5_10y6g"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3v2v7"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ru2uq"]
+texture = ExtResource("4_pi5rh")
+region_rect = Rect2(47, 132.59, 418, 139.63)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5wgvl"]
-texture = ExtResource("5_hojq6")
-region_rect = Rect2(694, 469.295, 532, 152.22)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7j5u"]
+texture = ExtResource("5_10y6g")
+region_rect = Rect2(47, 132.59, 418, 139.63)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -21,6 +24,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_owfyi")
 main_game_packed_scene = ExtResource("2_ww1lw")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(996, 262)
+scale = Vector2(1.765, 1.765)
+texture = ExtResource("4_5ck7u")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -34,55 +42,45 @@ theme_override_constants/margin_top = 134
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 179
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 85
-alignment = 2
-
-[node name="Logo" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
-position = Vector2(972, 128)
-scale = Vector2(1.765, 1.765)
-texture = ExtResource("4_5ck7u")
-
-[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer"]
-clip_contents = true
-custom_minimum_size = Vector2(490, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-focus_neighbor_top = NodePath("../../../StartButton")
-focus_neighbor_bottom = NodePath("../QuitButton")
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 738.0
+offset_top = 448.0
+offset_right = 1175.0
+offset_bottom = 586.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_t2bbi")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 61
+theme_override_styles/normal = SubResource("StyleBoxTexture_ru2uq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_y7j5u")
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 738.0
+offset_top = 596.0
+offset_right = 1175.0
+offset_bottom = 734.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_t2bbi")
+theme_override_font_sizes/font_size = 61
+theme_override_styles/normal = SubResource("StyleBoxTexture_ru2uq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_y7j5u")
 text = "Options"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
-clip_contents = true
-custom_minimum_size = Vector2(490, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-focus_neighbor_top = NodePath("../OptionsButton")
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 737.0
+offset_top = 749.0
+offset_right = 1174.0
+offset_bottom = 887.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_t2bbi")
-theme_override_font_sizes/font_size = 90
-theme_override_styles/normal = SubResource("StyleBoxTexture_3v2v7")
-text = "Exit Game"
+theme_override_font_sizes/font_size = 61
+theme_override_styles/normal = SubResource("StyleBoxTexture_ru2uq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_y7j5u")
+text = "Quit"
 
-[node name="StartButton" type="Button" parent="."]
-clip_contents = true
-custom_minimum_size = Vector2(490, 0)
-layout_mode = 2
-offset_left = 679.0
-offset_top = 430.0
-offset_right = 1241.0
-offset_bottom = 570.0
-size_flags_horizontal = 4
-focus_neighbor_bottom = NodePath("../MarginContainer/VBoxContainer/OptionsButton")
-theme_override_fonts/font = ExtResource("3_t2bbi")
-theme_override_font_sizes/font_size = 70
-theme_override_styles/normal = SubResource("StyleBoxTexture_5wgvl")
-text = "Start
-"
-
-[connection signal="button_down" from="MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_button_down"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="button_down" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_button_down"]
-[connection signal="button_down" from="StartButton" to="." method="_on_start_button_button_down"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

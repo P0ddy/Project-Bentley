@@ -1,10 +1,14 @@
-[gd_scene load_steps=31 format=3 uid="uid://cfksfks3n23hx"]
+[gd_scene load_steps=39 format=3 uid="uid://cfksfks3n23hx"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/character_select.gd" id="1_k3yhq"]
 [ext_resource type="Texture2D" uid="uid://bdfg71glqval6" path="res://Assets/Cars/Bus/Bus.png" id="2_sbnsk"]
 [ext_resource type="Texture2D" uid="uid://p4pfex6lyr1c" path="res://Assets/Cars/Ferrari/Ferrari.png" id="3_4nr4t"]
 [ext_resource type="Texture2D" uid="uid://bqroux18ckpri" path="res://Assets/Cars/StandardCar/Car1-driving-idle-Shee-WITHOUT-FLAMEt.png" id="3_4upjr"]
 [ext_resource type="FontFile" uid="uid://f7mrciexqi7f" path="res://Assets/Fonts/SPACE RETRO.TTF" id="5_mevfi"]
+[ext_resource type="Texture2D" uid="uid://botd2ht3gxqvh" path="res://Assets/UI/Arrowleftred.png" id="6_7abr7"]
+[ext_resource type="Texture2D" uid="uid://b28hlk1dj68up" path="res://Assets/UI/Arrowleftt.png" id="7_hsolj"]
+[ext_resource type="Texture2D" uid="uid://bb1fct2q057ga" path="res://Assets/UI/Arrowrightred.png" id="8_pxy46"]
+[ext_resource type="Texture2D" uid="uid://bxd86t2rg8uym" path="res://Assets/UI/Arrowright.png" id="9_8t64y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fyimi"]
 atlas = ExtResource("3_4upjr")
@@ -192,7 +196,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4mw38"]
+texture = ExtResource("6_7abr7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_isu75"]
+texture = ExtResource("7_hsolj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rg5w0"]
+texture = ExtResource("8_pxy46")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opl5o"]
+texture = ExtResource("9_8t64y")
+
 [node name="CharacterSelect" type="Node2D"]
+scale = Vector2(0.998176, 0.998715)
 script = ExtResource("1_k3yhq")
 
 [node name="Panel" type="Panel" parent="."]
@@ -207,22 +224,28 @@ sprite_frames = SubResource("SpriteFrames_7dl6s")
 animation = &"Player3"
 
 [node name="LeftButton" type="Button" parent="."]
-offset_left = 424.9
-offset_top = 500.0
-offset_right = 674.9
-offset_bottom = 567.0
+offset_left = 425.0
+offset_top = 443.0
+offset_right = 675.0
+offset_bottom = 635.0
+focus_neighbor_right = NodePath("../RightButton")
+focus_neighbor_bottom = NodePath("../SelectButton")
 theme_override_fonts/font = ExtResource("5_mevfi")
 theme_override_font_sizes/font_size = 45
-text = "<--"
+theme_override_styles/normal = SubResource("StyleBoxTexture_4mw38")
+theme_override_styles/hover = SubResource("StyleBoxTexture_isu75")
 
 [node name="RightButton" type="Button" parent="."]
-offset_left = 1252.0
-offset_top = 500.0
-offset_right = 1502.0
-offset_bottom = 567.0
+offset_left = 1268.0
+offset_top = 445.0
+offset_right = 1518.0
+offset_bottom = 634.0
+focus_neighbor_left = NodePath("../LeftButton")
+focus_neighbor_bottom = NodePath("../SelectButton")
 theme_override_fonts/font = ExtResource("5_mevfi")
 theme_override_font_sizes/font_size = 45
-text = "-->"
+theme_override_styles/normal = SubResource("StyleBoxTexture_rg5w0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_opl5o")
 
 [node name="Selected Car" type="Label" parent="."]
 offset_left = 414.0
@@ -239,6 +262,10 @@ offset_left = 852.0
 offset_top = 652.0
 offset_right = 1102.0
 offset_bottom = 722.0
+scale = Vector2(1.00278, 1)
+focus_neighbor_left = NodePath("../LeftButton")
+focus_neighbor_top = NodePath("../LeftButton")
+focus_neighbor_right = NodePath("../RightButton")
 theme_override_fonts/font = ExtResource("5_mevfi")
 theme_override_font_sizes/font_size = 45
 text = "Select"

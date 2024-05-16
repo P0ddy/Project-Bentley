@@ -1,7 +1,8 @@
 extends Control
 
 
-
+func _ready():
+	$BackToMenuButton.grab_focus()
 
 func _on_back_to_menu_button_pressed():
 	AudioPlayer.button_click()

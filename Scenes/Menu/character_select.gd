@@ -1,6 +1,12 @@
 extends Node2D
 
 
+
+func _ready():
+	$SelectButton.grab_focus()
+
+
+
 func _process(delta):
 	match Global.PlayerSelect:
 		0:

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://wgfhrt0csw1w"]
+[gd_scene load_steps=6 format=3 uid="uid://wgfhrt0csw1w"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/pause_menu.gd" id="1_c62km"]
 [ext_resource type="FontFile" uid="uid://f7mrciexqi7f" path="res://Assets/Fonts/SPACE RETRO.TTF" id="2_hi8ig"]
 [ext_resource type="PackedScene" uid="uid://bqemmj5sudlam" path="res://Scenes/Menu/volume_slider.tscn" id="3_j7qbm"]
+[ext_resource type="Texture2D" uid="uid://cy5564mb2i30r" path="res://Assets/UI/SLiderIconPink.png" id="4_nrqbq"]
+[ext_resource type="Texture2D" uid="uid://bdi34spau3l58" path="res://Assets/UI/SLiderIconGold.png" id="5_pnyou"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -54,6 +56,9 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(443.32, 100)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../../../MarginContainer2/HBoxContainer4/CheckButton")
+focus_neighbor_right = NodePath("../../../Sliders/VolumeSlider")
+focus_neighbor_bottom = NodePath("../MainMenuButton")
 theme_override_fonts/font = ExtResource("2_hi8ig")
 theme_override_font_sizes/font_size = 65
 text = "Continue"
@@ -62,6 +67,9 @@ text = "Continue"
 custom_minimum_size = Vector2(443.32, 100)
 layout_mode = 2
 size_flags_horizontal = 4
+focus_neighbor_left = NodePath("../../../MarginContainer2/HBoxContainer4/CheckButton")
+focus_neighbor_top = NodePath("../ContinueButton")
+focus_neighbor_right = NodePath("../../../Sliders/VolumeSlider3")
 theme_override_fonts/font = ExtResource("2_hi8ig")
 theme_override_font_sizes/font_size = 65
 text = "Main Menu"
@@ -99,12 +107,14 @@ text = "Fullscreen
 [node name="CheckButton" type="CheckButton" parent="CanvasLayer/MarginContainer2/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 6
+focus_neighbor_right = NodePath("../../../MarginContainer/VBoxContainer/ContinueButton")
 
 [node name="Sliders" type="VBoxContainer" parent="CanvasLayer"]
-offset_left = 1323.0
-offset_top = 422.0
-offset_right = 1796.0
-offset_bottom = 964.0
+offset_left = 1389.0
+offset_top = 229.0
+offset_right = 1738.0
+offset_bottom = 1055.0
+size_flags_horizontal = 4
 theme_override_constants/separation = 38
 
 [node name="MasterVoume" type="Label" parent="CanvasLayer/Sliders"]
@@ -117,8 +127,11 @@ text = "Volume
 "
 
 [node name="VolumeSlider" parent="CanvasLayer/Sliders" instance=ExtResource("3_j7qbm")]
-modulate = Color(0.959183, 0.000114744, 0.767214, 1)
 layout_mode = 2
+focus_neighbor_left = NodePath("../../MarginContainer/VBoxContainer/ContinueButton")
+focus_neighbor_bottom = NodePath("../VolumeSlider2")
+theme_override_icons/grabber = ExtResource("4_nrqbq")
+theme_override_icons/grabber_highlight = ExtResource("5_pnyou")
 bus_name = "Master"
 
 [node name="MusicVolume" type="Label" parent="CanvasLayer/Sliders"]
@@ -131,8 +144,12 @@ text = "Music
 "
 
 [node name="VolumeSlider2" parent="CanvasLayer/Sliders" instance=ExtResource("3_j7qbm")]
-modulate = Color(0.959183, 0.000114744, 0.767214, 1)
 layout_mode = 2
+focus_neighbor_left = NodePath("../../MarginContainer/VBoxContainer/ContinueButton")
+focus_neighbor_top = NodePath("../VolumeSlider")
+focus_neighbor_bottom = NodePath("../VolumeSlider3")
+theme_override_icons/grabber = ExtResource("4_nrqbq")
+theme_override_icons/grabber_highlight = ExtResource("5_pnyou")
 bus_name = "Music"
 
 [node name="SFXVoume" type="Label" parent="CanvasLayer/Sliders"]
@@ -144,8 +161,12 @@ theme_override_font_sizes/font_size = 87
 text = "SFX"
 
 [node name="VolumeSlider3" parent="CanvasLayer/Sliders" instance=ExtResource("3_j7qbm")]
-modulate = Color(0.959183, 0.000114744, 0.767214, 1)
 layout_mode = 2
+focus_neighbor_left = NodePath("../../MarginContainer/VBoxContainer/ContinueButton")
+focus_neighbor_top = NodePath("../VolumeSlider2")
+focus_neighbor_bottom = NodePath("../../MarginContainer/VBoxContainer/ContinueButton")
+theme_override_icons/grabber = ExtResource("4_nrqbq")
+theme_override_icons/grabber_highlight = ExtResource("5_pnyou")
 bus_name = "SFX"
 
 [connection signal="button_down" from="CanvasLayer/MarginContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_button_down"]

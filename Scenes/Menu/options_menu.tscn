@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8gvpvs1dpvr2"]
+[gd_scene load_steps=10 format=3 uid="uid://c8gvpvs1dpvr2"]
 
 [ext_resource type="Script" path="res://Scenes/Menu/options_menu.gd" id="1_paq8y"]
 [ext_resource type="PackedScene" uid="uid://bqemmj5sudlam" path="res://Scenes/Menu/volume_slider.tscn" id="2_3jgbx"]
 [ext_resource type="FontFile" uid="uid://f7mrciexqi7f" path="res://Assets/Fonts/SPACE RETRO.TTF" id="2_fwc4q"]
+[ext_resource type="Texture2D" uid="uid://6a826vbv5awm" path="res://Assets/UI/Button.png" id="4_q3ibf"]
+[ext_resource type="Texture2D" uid="uid://ch554c13oxwbc" path="res://Assets/UI/ButtonHovor.png" id="5_io3bj"]
+[ext_resource type="Texture2D" uid="uid://cy5564mb2i30r" path="res://Assets/UI/SLiderIconPink.png" id="6_jjav5"]
+[ext_resource type="Texture2D" uid="uid://bdi34spau3l58" path="res://Assets/UI/SLiderIconGold.png" id="7_icq8o"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_miujt"]
+texture = ExtResource("4_q3ibf")
+region_rect = Rect2(52.946, 131.463, 423.28, 143.267)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x1jcd"]
+texture = ExtResource("5_io3bj")
+region_rect = Rect2(53.106, 131.463, 423.28, 143.267)
 
 [node name="Options_Menu" type="Control"]
 layout_mode = 3
@@ -91,52 +103,16 @@ text = "Fullscreen
 [node name="CheckButton" type="CheckButton" parent="Mid Color/MarginContainer/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 6
+focus_neighbor_right = NodePath("../../../../VolumeSlider")
+focus_neighbor_bottom = NodePath("../../../../BackToMenuButton")
 
 [node name="Sliders" type="VBoxContainer" parent="Mid Color"]
 layout_mode = 0
-offset_left = 858.0
-offset_top = 75.0
-offset_right = 1338.0
-offset_bottom = 565.0
+offset_left = 901.0
+offset_top = 20.0
+offset_right = 1381.0
+offset_bottom = 846.0
 theme_override_constants/separation = 20
-
-[node name="MasterVoume" type="Label" parent="Mid Color/Sliders"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 40
-theme_override_fonts/font = ExtResource("2_fwc4q")
-theme_override_font_sizes/font_size = 120
-text = "Volume
-"
-
-[node name="VolumeSlider" parent="Mid Color/Sliders" instance=ExtResource("2_3jgbx")]
-layout_mode = 2
-bus_name = "Master"
-
-[node name="MusicVolume" type="Label" parent="Mid Color/Sliders"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 40
-theme_override_fonts/font = ExtResource("2_fwc4q")
-theme_override_font_sizes/font_size = 120
-text = "Music
-"
-
-[node name="VolumeSlider2" parent="Mid Color/Sliders" instance=ExtResource("2_3jgbx")]
-layout_mode = 2
-bus_name = "Music"
-
-[node name="SFXVoume" type="Label" parent="Mid Color/Sliders"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 40
-theme_override_fonts/font = ExtResource("2_fwc4q")
-theme_override_font_sizes/font_size = 120
-text = "SFX"
-
-[node name="VolumeSlider3" parent="Mid Color/Sliders" instance=ExtResource("2_3jgbx")]
-layout_mode = 2
-bus_name = "SFX"
 
 [node name="BackToMenuButton" type="Button" parent="."]
 layout_mode = 1
@@ -151,9 +127,98 @@ offset_right = 155.0
 offset_bottom = 479.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_top = NodePath("../VolumeSlider3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_fwc4q")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxTexture_miujt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x1jcd")
 text = "Back"
+
+[node name="MasterVoume" type="Label" parent="."]
+layout_mode = 2
+offset_left = 1138.0
+offset_top = 303.0
+offset_right = 1618.0
+offset_bottom = 417.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_fwc4q")
+theme_override_font_sizes/font_size = 60
+text = "Volume
+"
+
+[node name="MusicVolume" type="Label" parent="."]
+layout_mode = 2
+offset_left = 1144.0
+offset_top = 466.0
+offset_right = 1624.0
+offset_bottom = 580.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_fwc4q")
+theme_override_font_sizes/font_size = 60
+text = "Music
+"
+
+[node name="SFXVoume" type="Label" parent="."]
+layout_mode = 2
+offset_left = 1146.0
+offset_top = 616.0
+offset_right = 1626.0
+offset_bottom = 730.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("2_fwc4q")
+theme_override_font_sizes/font_size = 60
+text = "SFX"
+
+[node name="VolumeSlider" parent="." instance=ExtResource("2_3jgbx")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1129.0
+offset_top = 351.0
+offset_right = 1609.0
+offset_bottom = 479.0
+focus_neighbor_left = NodePath("../Mid Color/MarginContainer/HBoxContainer4/CheckButton")
+focus_neighbor_bottom = NodePath("../VolumeSlider2")
+theme_override_icons/grabber = ExtResource("6_jjav5")
+theme_override_icons/grabber_highlight = ExtResource("7_icq8o")
+bus_name = "Master"
+
+[node name="VolumeSlider2" parent="." instance=ExtResource("2_3jgbx")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1129.0
+offset_top = 499.0
+offset_right = 1609.0
+offset_bottom = 627.0
+focus_neighbor_left = NodePath("../Mid Color/MarginContainer/HBoxContainer4/CheckButton")
+focus_neighbor_top = NodePath("../VolumeSlider")
+focus_neighbor_bottom = NodePath("../VolumeSlider3")
+theme_override_icons/grabber = ExtResource("6_jjav5")
+theme_override_icons/grabber_highlight = ExtResource("7_icq8o")
+bus_name = "Music"
+
+[node name="VolumeSlider3" parent="." instance=ExtResource("2_3jgbx")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1129.0
+offset_top = 647.0
+offset_right = 1609.0
+offset_bottom = 775.0
+focus_neighbor_left = NodePath("../Mid Color/MarginContainer/HBoxContainer4/CheckButton")
+focus_neighbor_top = NodePath("../VolumeSlider2")
+focus_neighbor_bottom = NodePath("../BackToMenuButton")
+theme_override_icons/grabber = ExtResource("6_jjav5")
+theme_override_icons/grabber_highlight = ExtResource("7_icq8o")
+bus_name = "SFX"
 
 [connection signal="toggled" from="Mid Color/MarginContainer/HBoxContainer4/CheckButton" to="." method="_on_check_button_toggled"]
 [connection signal="button_down" from="BackToMenuButton" to="." method="_on_back_to_menu_button_button_down"]
