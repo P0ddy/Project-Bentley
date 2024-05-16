@@ -1,10 +1,74 @@
-[gd_scene load_steps=4 format=3 uid="uid://5dmcdfjftye8"]
+[gd_scene load_steps=13 format=3 uid="uid://dmclc3gwkvl65"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/PickUps/bullet_up.gd" id="1_x3kla"]
-[ext_resource type="Texture2D" uid="uid://eodhnb2wm1we" path="res://Assets/PickUps/Upgrades/BulletPowerUp_Big.png" id="2_5rrhx"]
+[ext_resource type="Texture2D" uid="uid://bsgqercx3vsoc" path="res://Assets/PickUps/Upgrades/BulletPowerUp.png" id="2_ypu03"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s7xgt"]
 radius = 31.0161
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm3sf"]
+atlas = ExtResource("2_ypu03")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g82pa"]
+atlas = ExtResource("2_ypu03")
+region = Rect2(24, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnok3"]
+atlas = ExtResource("2_ypu03")
+region = Rect2(48, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7up7"]
+atlas = ExtResource("2_ypu03")
+region = Rect2(72, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_534kl"]
+atlas = ExtResource("2_ypu03")
+region = Rect2(96, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eomo2"]
+atlas = ExtResource("2_ypu03")
+region = Rect2(120, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8f3d"]
+atlas = ExtResource("2_ypu03")
+region = Rect2(144, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp7n2"]
+atlas = ExtResource("2_ypu03")
+region = Rect2(168, 0, 24, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dmgpv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bm3sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g82pa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnok3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7up7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_534kl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eomo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8f3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp7n2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="BulletUp" type="Area2D"]
 script = ExtResource("1_x3kla")
@@ -12,9 +76,10 @@ script = ExtResource("1_x3kla")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_s7xgt")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.232481, 0.232481)
-texture = ExtResource("2_5rrhx")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.572, 2.572)
+sprite_frames = SubResource("SpriteFrames_dmgpv")
+autoplay = "default"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

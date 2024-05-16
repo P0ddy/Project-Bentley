@@ -26,7 +26,7 @@ func _on_detection_body_entered(body):
 func _ready():
 	startpos = position.y
 	AudioPlayer.BossFightMusicStart()
-	AudioPlayer.InGameMusicStop()
+
 
 func _physics_process(delta):
 	var movement = Vector2(-speed, 0)
@@ -71,6 +71,10 @@ func shoot():
 
 func enemy_hit():
 	Health -= 1
+	$Sprite2D.modulate = Color.DARK_RED
+	await get_tree().create_timer(0.1).timeout
+	$Sprite2D.modulate = Color.WHITE
+	$HitSound.play()
 	if Health == 0:
 		Global.camera.screen_shake(25, 25, 0.1)
 		var explosion = Explosion.instantiate()
@@ -80,9 +84,12 @@ func enemy_hit():
 		Bossdeath.emit()
 		AudioPlayer.BossFightMusicStop()
 		AudioPlayer.InGameMusicStart()
+		AudioPlayer.BossDeathSound()
+		AudioPlayer.Explosion()
 		queue_free()
 
 
 func _on_damage_area_body_entered(body):
 	if body.has_method("player_hit"):
 		body.player_hit()
+		AudioPlayer.BossMeleeSound()

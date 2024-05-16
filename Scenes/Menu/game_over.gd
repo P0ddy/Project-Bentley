@@ -2,8 +2,8 @@ extends Control
 
 
 func _on_restart_pressed():
+	AudioPlayer.GameOverThemeStop()
 	AudioPlayer.button_click()
-	AudioPlayer.BossFightMusicStop()
 	AudioPlayer.InGameMusicStop()
 	AudioPlayer.InGameMusicStart()
 	
@@ -12,7 +12,7 @@ func _on_restart_pressed():
 	Global.health = 3
 
 func _on_quit_pressed():
-	AudioPlayer.BossFightMusicStop()
+	AudioPlayer.GameOverThemeStop()
 	AudioPlayer.InGameMusicStop()
 	AudioPlayer.MainThemeStart()
 	AudioPlayer.button_click()

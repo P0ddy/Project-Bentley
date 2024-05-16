@@ -155,6 +155,8 @@ stream = SubResource("AudioStreamRandomizer_p2645")
 volume_db = 2.111
 bus = &"SFX"
 
+[node name="Shooting Sound" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="timeout" from="ShootSpeed" to="." method="_on_shoot_speed_timeout"]
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="finished" from="HitSounds" to="." method="_on_idle_sounds_finished"]

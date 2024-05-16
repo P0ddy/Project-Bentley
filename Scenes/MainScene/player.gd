@@ -84,6 +84,8 @@ func player_hit():
 	
 	
 	if Global.health == 0:
+		AudioPlayer.InGameMusicStop()
+		AudioPlayer.GameOverThemePlay()
 		get_tree().change_scene_to_file("res://Scenes/Menu/game_over.tscn")
 		queue_free()
 		

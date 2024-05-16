@@ -32,3 +32,21 @@ func BossFightMusicStart():
 	
 func BossFightMusicStop():
 	$BossFight.stop()
+	
+func BulletUp():
+	$BulletUp.play()
+	
+func ScorePlus():
+	$"Score +".play()
+
+func BossMeleeSound():
+	$BossMelee.play()
+
+func BossDeathSound():
+	$BossDeath.play()
+
+func GameOverThemePlay():
+	$GameOverTheme.play()
+	
+func GameOverThemeStop():
+	$GameOverTheme.stop()
