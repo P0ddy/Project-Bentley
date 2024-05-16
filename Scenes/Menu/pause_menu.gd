@@ -14,6 +14,7 @@ func resume():
 
 
 func _on_continue_button_button_down():
+	print("test")
 	AudioPlayer.button_click()
 	get_tree().paused = false
 	queue_free()
@@ -29,8 +30,7 @@ func _on_main_menu_button_button_down():
 
 
 func _process(delta):
-	return
-	if Input.is_action_pressed("Pause"):
+	if Input.is_action_just_pressed("Pause") and get_tree().paused:
 		get_tree().paused = false
 		queue_free() 
 
