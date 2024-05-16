@@ -28,17 +28,15 @@ func enemy_hit():
 	await get_tree().create_timer(0.1).timeout
 	$Sprite2D.modulate = Color.WHITE
 	
-	
 	if health == 0:
 		Global.camera.screen_shake(4, 4, 0.05)
 		Global.score += 5
-		queue_free()
-		
-	if health == 0:
+		spawn_bulletup()
 		var explosion = Explosion.instantiate()
 		explosion.global_position = global_position
 		get_tree().current_scene.add_child(explosion)
 		AudioPlayer.Explosion()
+		queue_free()
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
@@ -48,3 +46,10 @@ func _on_damage_area_2d_body_entered(body):
 	if body.has_method("player_hit"):
 		body.player_hit()
 	
+
+func spawn_bulletup():
+	if randf() <= 0.8:
+		var bulletupinstance = preload("res://Scenes/MainScene/PickUps/bullet_up.tscn").instantiate()
+		Global.game.add_child(bulletupinstance)
+		bulletupinstance.global_position = global_position
+

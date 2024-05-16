@@ -16,7 +16,7 @@ const ACCELERATION = 2800
 const FRICTION = 1300
 const MAX_SPEED = 450
 
-
+var attackspeed = 0.25
 
 
 var health = 3
@@ -64,8 +64,13 @@ func shoot ():
 	get_tree().current_scene.add_child(bullet)
 	
 	muzzleflash.play("MuzzleFlash")
-	$AttackSpeedTimer.start()
+	$AttackSpeedTimer.start(attackspeed)
 	canshoot = false
+
+func attackspeedboost():
+	attackspeed *= 0.5
+	await get_tree().create_timer(5).timeout
+	attackspeed *= 2
 
 func player_hit():
 	health -= 1

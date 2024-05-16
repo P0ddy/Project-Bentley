@@ -6,6 +6,9 @@ var Boss = preload("res://Scenes/MainScene/boss.tscn")
 var Meteor = preload("res://Scenes/MainScene/meteor.tscn")
 var Vel = preload("res://Scenes/MainScene/vel.tscn")
 
+@export var spawntime: Array[float]
+var stage = 0
+
 func _ready():
 	Global.game = self
 
@@ -41,5 +44,6 @@ func _on_bosstimer_timeout():
 	$Bosstimer.stop()
 
 func on_boss_death():
-	$SpawnTimer.start()
+	stage = clampi(stage + 1, 0, spawntime.size()-1)
+	$SpawnTimer.start(spawntime[stage])
 	$Bosstimer.start()
