@@ -1,10 +1,74 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuyb3s030kqqs"]
+[gd_scene load_steps=15 format=3 uid="uid://cuyb3s030kqqs"]
 
 [ext_resource type="Script" path="res://Scenes/MainScene/PickUps/health_pick_up.gd" id="1_d2gn8"]
-[ext_resource type="Texture2D" uid="uid://dxjbhq4tlm2yd" path="res://Assets/PickUps/Upgrades/HealthUp_Big.png" id="2_pvk8t"]
+[ext_resource type="Texture2D" uid="uid://bm706dirc0luw" path="res://Assets/PickUps/Upgrades/HealthUp.png" id="2_bu1xf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tl7k4"]
 radius = 2.93852
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7m5m"]
+atlas = ExtResource("2_bu1xf")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w36t5"]
+atlas = ExtResource("2_bu1xf")
+region = Rect2(24, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgaag"]
+atlas = ExtResource("2_bu1xf")
+region = Rect2(48, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gblay"]
+atlas = ExtResource("2_bu1xf")
+region = Rect2(72, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r64ej"]
+atlas = ExtResource("2_bu1xf")
+region = Rect2(96, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2ugc"]
+atlas = ExtResource("2_bu1xf")
+region = Rect2(120, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvh7j"]
+atlas = ExtResource("2_bu1xf")
+region = Rect2(144, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ello"]
+atlas = ExtResource("2_bu1xf")
+region = Rect2(168, 0, 24, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x25hy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7m5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w36t5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgaag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gblay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r64ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2ugc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvh7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ello")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_8xm01"]
 resource_name = "AufundAb"
@@ -49,10 +113,12 @@ scale = Vector2(10.555, 10.555)
 shape = SubResource("CircleShape2D_tl7k4")
 one_way_collision_margin = 0.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
-scale = Vector2(0.232481, 0.232481)
-texture = ExtResource("2_pvk8t")
+scale = Vector2(2.042, 2.042)
+sprite_frames = SubResource("SpriteFrames_x25hy")
+autoplay = "default"
+frame_progress = 0.815286
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
